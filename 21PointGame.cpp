@@ -1,12 +1,12 @@
 //////////////////////////////
-#define _WIN32_WINNT 0x0500	//
-#include <iostream>		    //
-#include <ctime>		    //
-#include <conio.h>		    // Библиотеки
-#include <fstream>		    //
-#include <windows.h>		//
+#define _WIN32_WINNT 0x0500 //
+#include <iostream>	    //
+#include <ctime>	    //
+#include <conio.h>	    // Библиотеки
+#include <fstream>	    //
+#include <windows.h>	    //
 #define cls system ("cls"); //
-using namespace std;		//
+using namespace std;	    //
 //////////////////////////////
 
 /* Глобальные переменные */

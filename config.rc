@@ -1,0 +1,23 @@
+MAINICON ICON "21PointGameIcon.ico"
+1 VERSIONINFO
+FILEVERSION 21
+PRODUCTVERSION 0,0,0,1
+{
+ BLOCK "StringFileInfo"
+ {
+  BLOCK "040904E4"
+  {
+   VALUE "CompanyName", "2Company\000"
+   VALUE "FileDescription", "Console game application\000"
+   VALUE "LegalCopyright", "Satsuk Mikhail Mikhailovich\000"
+   VALUE "LegalTrademarks", "Owned\000"
+   VALUE "OriginalFilename", "21PointGame\000"
+   VALUE "ProductName", "21PointGame\000"
+   VALUE "ProductVersion", "17.02\000"
+  }
+ }
+ BLOCK "VarFileInfo"
+ {
+  VALUE "Translation", 0x0409, 0x04E4
+ }
+}

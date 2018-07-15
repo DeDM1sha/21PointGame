@@ -2,14 +2,14 @@
 #define _WIN32_WINNT 0x0500	//
 #include <iostream>		    //
 #include <ctime>		    //
-#include <conio.h>		    // Библиотеки
+#include <conio.h>		    // Р‘РёР±Р»РёРѕС‚РµРєРё
 #include <fstream>		    //
 #include <windows.h>		//
 #define cls system ("cls"); //
 using namespace std;		//
 //////////////////////////////
 
-/* Глобальные переменные */
+/* Р“Р»РѕР±Р°Р»СЊРЅС‹Рµ РїРµСЂРµРјРµРЅРЅС‹Рµ */
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 bool Part=0, inst=0, blue=0, green=0, blues=0, red=0, lil=0, yellow=0, white=0, svetblue=0, svetred=0, svetlil=0, svetwhite=0, bit16=1, bit8=0, Sound=1, Reading=0, FirstGamerWin=0, SecondGamerWin=0;																																																																														//
@@ -20,7 +20,7 @@ int SumPts=0, pts=0, Calibration=0, DifferencePts=0, ConsoleWidht=0, ConsoleHeig
 																																																																																																																															//
 float WinsFirstBotLevel=0, WinsSecondBotLevel=0, WinsThirdBotLevel=0, WinsFourthBotLevel=0, LossesFirstBotLevel=0, LossesSecondBotLevel=0, LossesThirdBotLevel=0, LossesFourthBotLevel=0;																																																																																	//
 																																																																																																																															//
-string BlueNotBuy = "1. Синий (200 PTS)", GreenNotBuy = "2.Зеленый(200 PTS)", BluesNotBuy = "3. Голубой (200 PTS)", RedNotBuy = "4. Красный (200 PTS)", LilNotBuy = "5. Лиловый (200 PTS)", YellowNotBuy = "6. Желтый (200 PTS) ", WhiteNotBuy = "7. Белый (200 PTS)       ", SvetBlueNotBuy = "8. Светло-синий (350 PTS)", SvetRedNotBuy = "9. Светло-красный ", SvetLilNotBuy = "Q. Светло-Лиловый (350 PTS) ", SvetWhiteNotBuy = "W. Ярко-белый (350 PTS)       ", Buy = "     (Куплено)    ", Spacing = "(350 PTS)";	//
+string BlueNotBuy = "1. РЎРёРЅРёР№ (200 PTS)", GreenNotBuy = "2.Р—РµР»РµРЅС‹Р№(200 PTS)", BluesNotBuy = "3. Р“РѕР»СѓР±РѕР№ (200 PTS)", RedNotBuy = "4. РљСЂР°СЃРЅС‹Р№ (200 PTS)", LilNotBuy = "5. Р›РёР»РѕРІС‹Р№ (200 PTS)", YellowNotBuy = "6. Р–РµР»С‚С‹Р№ (200 PTS) ", WhiteNotBuy = "7. Р‘РµР»С‹Р№ (200 PTS)       ", SvetBlueNotBuy = "8. РЎРІРµС‚Р»Рѕ-СЃРёРЅРёР№ (350 PTS)", SvetRedNotBuy = "9. РЎРІРµС‚Р»Рѕ-РєСЂР°СЃРЅС‹Р№ ", SvetLilNotBuy = "Q. РЎРІРµС‚Р»Рѕ-Р›РёР»РѕРІС‹Р№ (350 PTS) ", SvetWhiteNotBuy = "W. РЇСЂРєРѕ-Р±РµР»С‹Р№ (350 PTS)       ", Buy = "     (РљСѓРїР»РµРЅРѕ)    ", Spacing = "(350 PTS)";	//
 																																																																																																																															//
 HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);																																																																																																																			//
 																																																																																																																															//
@@ -31,7 +31,7 @@ void nenter (unsigned short int NumberEnter) {
     for (Cyclicvariable = 0; Cyclicvariable < NumberEnter; Cyclicvariable++)
 	   cout << "\n";
 
-} // Функция для создания отступов
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ РѕС‚СЃС‚СѓРїРѕРІ
 
 void wait (unsigned short int Time) {
 
@@ -39,20 +39,20 @@ void wait (unsigned short int Time) {
 
         while (clock() < end_time);
 
-} // Функция для реализации задержки
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ СЂРµР°Р»РёР·Р°С†РёРё Р·Р°РґРµСЂР¶РєРё
 
 void FullScreen (void) {
 
 	COORD coord;
 	coord=GetLargestConsoleWindowSize(GetStdHandle(STD_OUTPUT_HANDLE));
-	SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE),coord); // Самый большой размер окна
+	SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE),coord); // РЎР°РјС‹Р№ Р±РѕР»СЊС€РѕР№ СЂР°Р·РјРµСЂ РѕРєРЅР°
 	ShowWindow(GetConsoleWindow(), SW_MAXIMIZE);
 	keybd_event(VK_MENU,0x38,0,0);
-	keybd_event(VK_RETURN,0x1c,0,0); // Полноэкранный режим
+	keybd_event(VK_RETURN,0x1c,0,0); // РџРѕР»РЅРѕСЌРєСЂР°РЅРЅС‹Р№ СЂРµР¶РёРј
 	keybd_event(VK_RETURN,0x1c,KEYEVENTF_KEYUP,0);
 	keybd_event(VK_MENU,0x38,KEYEVENTF_KEYUP,0);
 
-} // Функция для выставления параметров консольного окна
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІС‹СЃС‚Р°РІР»РµРЅРёСЏ РїР°СЂР°РјРµС‚СЂРѕРІ РєРѕРЅСЃРѕР»СЊРЅРѕРіРѕ РѕРєРЅР°
 
 void ConsoleWidhtAndHeight (void) {
 
@@ -66,7 +66,7 @@ void ConsoleWidhtAndHeight (void) {
 
 		}
 
-} // Функция для подсчета высоты и ширины консольного окна
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РїРѕРґСЃС‡РµС‚Р° РІС‹СЃРѕС‚С‹ Рё С€РёСЂРёРЅС‹ РєРѕРЅСЃРѕР»СЊРЅРѕРіРѕ РѕРєРЅР°
 
 int nSpacer (unsigned short int NumberSpace) {
 
@@ -75,7 +75,7 @@ int nSpacer (unsigned short int NumberSpace) {
 
 	return NumberSpace;
 
-} // Функция для установки определённого количество пробелов
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ СѓСЃС‚Р°РЅРѕРІРєРё РѕРїСЂРµРґРµР»С‘РЅРЅРѕРіРѕ РєРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРѕР±РµР»РѕРІ
 
 int CoutCenterNameColor (string Str, int NumberColor, string Str2, int NumberColor2) {
 
@@ -99,7 +99,7 @@ int CoutCenterNameColor (string Str, int NumberColor, string Str2, int NumberCol
 	SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 7));
 	return Space;
 
-} // Функция для цветного отображения пунктов выбора в настройках цвета
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ С†РІРµС‚РЅРѕРіРѕ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РїСѓРЅРєС‚РѕРІ РІС‹Р±РѕСЂР° РІ РЅР°СЃС‚СЂРѕР№РєР°С… С†РІРµС‚Р°
 
 void Center (string Str) {
 
@@ -111,7 +111,7 @@ void Center (string Str) {
 	nSpacer(Space);
 	cout << Str;
 
-} // Функция для отображения текста по центру экрана
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ С‚РµРєСЃС‚Р° РїРѕ С†РµРЅС‚СЂСѓ СЌРєСЂР°РЅР°
 
 void CenterC (string Str1) {
 
@@ -124,7 +124,7 @@ void CenterC (string Str1) {
 	nSpacer(Space - 1);
 	cout << "|" + Str1 + "|";
 
-} // Функция для грамотного отображения пунктов выбора в меню магазине цветов, используется только в самом магазине
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РіСЂР°РјРѕС‚РЅРѕРіРѕ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РїСѓРЅРєС‚РѕРІ РІС‹Р±РѕСЂР° РІ РјРµРЅСЋ РјР°РіР°Р·РёРЅРµ С†РІРµС‚РѕРІ, РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ С‚РѕР»СЊРєРѕ РІ СЃР°РјРѕРј РјР°РіР°Р·РёРЅРµ
 
 void CenterCL (string Str1) {
 
@@ -137,7 +137,7 @@ void CenterCL (string Str1) {
 	nSpacer(Space - 1);
 	cout << "|" + Str1;
 
-} // Вторая функция для грамотного отображения пунктов выбора в меню магазина цветов, тоже используется только в самом магазине
+} // Р’С‚РѕСЂР°СЏ С„СѓРЅРєС†РёСЏ РґР»СЏ РіСЂР°РјРѕС‚РЅРѕРіРѕ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РїСѓРЅРєС‚РѕРІ РІС‹Р±РѕСЂР° РІ РјРµРЅСЋ РјР°РіР°Р·РёРЅР° С†РІРµС‚РѕРІ, С‚РѕР¶Рµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ С‚РѕР»СЊРєРѕ РІ СЃР°РјРѕРј РјР°РіР°Р·РёРЅРµ
 
 void CenterM (string Str1) {
 
@@ -150,103 +150,103 @@ void CenterM (string Str1) {
 	nSpacer(Space);
 	cout << Str1;
 
-} // Третья функция для грамотного отображения пунктов выбора в меню магазина цветов, тоже используется только в самом магазине
+} // РўСЂРµС‚СЊСЏ С„СѓРЅРєС†РёСЏ РґР»СЏ РіСЂР°РјРѕС‚РЅРѕРіРѕ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РїСѓРЅРєС‚РѕРІ РІС‹Р±РѕСЂР° РІ РјРµРЅСЋ РјР°РіР°Р·РёРЅР° С†РІРµС‚РѕРІ, С‚РѕР¶Рµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ С‚РѕР»СЊРєРѕ РІ СЃР°РјРѕРј РјР°РіР°Р·РёРЅРµ
 
 void win (void) {
 
 	  Center ("      *******************\n");
-	  Center ("      *  Ты победил :)  *\n");
+	  Center ("      *  РўС‹ РїРѕР±РµРґРёР» :)  *\n");
 	  Center ("      *******************\n");
 
-} // Функция отображения сообщения о победе пользователя в одиночном режиме
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЃРѕРѕР±С‰РµРЅРёСЏ Рѕ РїРѕР±РµРґРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РІ РѕРґРёРЅРѕС‡РЅРѕРј СЂРµР¶РёРјРµ
 
 void lose (void) {
 
 	  Center ("      ********************\n");
-	  Center ("      *  Ты проиграл :(  *\n");
+	  Center ("      *  РўС‹ РїСЂРѕРёРіСЂР°Р» :(  *\n");
 	  Center ("      ********************\n");
 
-} // Функция отображения сообщения о поражении пользователя в одиночном режиме
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЃРѕРѕР±С‰РµРЅРёСЏ Рѕ РїРѕСЂР°Р¶РµРЅРёРё РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РІ РѕРґРёРЅРѕС‡РЅРѕРј СЂРµР¶РёРјРµ
 
 void tie (void) {
 
 	  Center ("  ****************\n");
-	  Center ("  *    Ничья :D  *\n");
+	  Center ("  *    РќРёС‡СЊСЏ :D  *\n");
 	  Center ("  ****************\n");
 
-} // Функция отображения сообщения о ничье в одиночном режиме
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЃРѕРѕР±С‰РµРЅРёСЏ Рѕ РЅРёС‡СЊРµ РІ РѕРґРёРЅРѕС‡РЅРѕРј СЂРµР¶РёРјРµ
 
 void player1 (void) {
 
       Center ("*****************************\n");
-	  Center ("*  Первый игрок победил :)  *\n");
+	  Center ("*  РџРµСЂРІС‹Р№ РёРіСЂРѕРє РїРѕР±РµРґРёР» :)  *\n");
 	  Center ("*****************************\n");
 
-} // Функция отображения сообщения о победе первого игрока в многопользовательском режиме
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЃРѕРѕР±С‰РµРЅРёСЏ Рѕ РїРѕР±РµРґРµ РїРµСЂРІРѕРіРѕ РёРіСЂРѕРєР° РІ РјРЅРѕРіРѕРїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРј СЂРµР¶РёРјРµ
 
 void player2 (void) {
 
       Center ("*****************************\n");
-	  Center ("*  Второй игрок победил :)  *\n");
+	  Center ("*  Р’С‚РѕСЂРѕР№ РёРіСЂРѕРє РїРѕР±РµРґРёР» :)  *\n");
 	  Center ("*****************************\n");
 
-} // Функция отображения сообщения о победе второго игрока в многопользовательском режиме
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЃРѕРѕР±С‰РµРЅРёСЏ Рѕ РїРѕР±РµРґРµ РІС‚РѕСЂРѕРіРѕ РёРіСЂРѕРєР° РІ РјРЅРѕРіРѕРїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРј СЂРµР¶РёРјРµ
 
 void polosa (void) {
 
     Center ("__________________________________________\n");
 
-} // Функция отображения короткой полосы по центру экрана
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РєРѕСЂРѕС‚РєРѕР№ РїРѕР»РѕСЃС‹ РїРѕ С†РµРЅС‚СЂСѓ СЌРєСЂР°РЅР°
 
 void poloca (void) {
 
 	nenter(1);
 	Center ("______________________________________________________________________________________________________________________________________\n");
 
-} // Функция отображения длинной полосы по центру экрана
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РґР»РёРЅРЅРѕР№ РїРѕР»РѕСЃС‹ РїРѕ С†РµРЅС‚СЂСѓ СЌРєСЂР°РЅР°
 
 void gamer1 (void) {
 
-	cout <<"                                 1. Взять еще карту" << "\n";
-	cout <<"                                 2. Конец хода     " << "\n";
+	cout <<"                                 1. Р’Р·СЏС‚СЊ РµС‰Рµ РєР°СЂС‚Сѓ" << "\n";
+	cout <<"                                 2. РљРѕРЅРµС† С…РѕРґР°     " << "\n";
 
-} // Функция отображения сообщения с меню выбора для первого игрока в многопользовательском режиме
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЃРѕРѕР±С‰РµРЅРёСЏ СЃ РјРµРЅСЋ РІС‹Р±РѕСЂР° РґР»СЏ РїРµСЂРІРѕРіРѕ РёРіСЂРѕРєР° РІ РјРЅРѕРіРѕРїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРј СЂРµР¶РёРјРµ
 
 void gamer2 (void) {
 
-	cout <<"                                                                                                                    4. Взять еще карту" << "\n";
-	cout <<"                                                                                                                    5. Конец хода     " << "\n";
+	cout <<"                                                                                                                    4. Р’Р·СЏС‚СЊ РµС‰Рµ РєР°СЂС‚Сѓ" << "\n";
+	cout <<"                                                                                                                    5. РљРѕРЅРµС† С…РѕРґР°     " << "\n";
 
-} // Функция отображения сообщения с меню выбора для второго игрока в многопользовательском режиме
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЃРѕРѕР±С‰РµРЅРёСЏ СЃ РјРµРЅСЋ РІС‹Р±РѕСЂР° РґР»СЏ РІС‚РѕСЂРѕРіРѕ РёРіСЂРѕРєР° РІ РјРЅРѕРіРѕРїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРј СЂРµР¶РёРјРµ
 
 void gamer1malo (void) {
 
-	cout <<"                                 1. Взять еще карту" << "\n";
+	cout <<"                                 1. Р’Р·СЏС‚СЊ РµС‰Рµ РєР°СЂС‚Сѓ" << "\n";
 
-} // Функция отображения сообщения с меню выбора для первого игрока в многопользовательском режиме
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЃРѕРѕР±С‰РµРЅРёСЏ СЃ РјРµРЅСЋ РІС‹Р±РѕСЂР° РґР»СЏ РїРµСЂРІРѕРіРѕ РёРіСЂРѕРєР° РІ РјРЅРѕРіРѕРїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРј СЂРµР¶РёРјРµ
 
 void gamer2malo (void) {
 
-	cout <<"                                                                                                                   4. Взять еще карту" << "\n";
+	cout <<"                                                                                                                   4. Р’Р·СЏС‚СЊ РµС‰Рµ РєР°СЂС‚Сѓ" << "\n";
 
-} // Функция отображения сообщения с меню выбора для второго игрока в многопользовательском режиме
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЃРѕРѕР±С‰РµРЅРёСЏ СЃ РјРµРЅСЋ РІС‹Р±РѕСЂР° РґР»СЏ РІС‚РѕСЂРѕРіРѕ РёРіСЂРѕРєР° РІ РјРЅРѕРіРѕРїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРј СЂРµР¶РёРјРµ
 
 void card (void) {
 
-	Center ("1. Взять еще одну карту\n");
-	Center ("2. Конец хода\n");
+	Center ("1. Р’Р·СЏС‚СЊ РµС‰Рµ РѕРґРЅСѓ РєР°СЂС‚Сѓ\n");
+	Center ("2. РљРѕРЅРµС† С…РѕРґР°\n");
 
-} // Функция отображения сообщения с меню выбора для пользователя в одиночном режиме
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЃРѕРѕР±С‰РµРЅРёСЏ СЃ РјРµРЅСЋ РІС‹Р±РѕСЂР° РґР»СЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РІ РѕРґРёРЅРѕС‡РЅРѕРј СЂРµР¶РёРјРµ
 
 void restart (void) {
 
 	Center ("___________________________________________\n");
-	Center ("|Повторить игру?                          |\n");
-	Center ("|Enter. Рестарт                           |\n");
-	Center ("|Esc. Вернуться в главное меню            |\n");
+	Center ("|РџРѕРІС‚РѕСЂРёС‚СЊ РёРіСЂСѓ?                          |\n");
+	Center ("|Enter. Р РµСЃС‚Р°СЂС‚                           |\n");
+	Center ("|Esc. Р’РµСЂРЅСѓС‚СЊСЃСЏ РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ            |\n");
 	Center ("|_________________________________________|\n");
 
-} // Функция отображения сообщения с меню выбора для пользователя в одиночном режиме, после окончания партии
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЃРѕРѕР±С‰РµРЅРёСЏ СЃ РјРµРЅСЋ РІС‹Р±РѕСЂР° РґР»СЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РІ РѕРґРёРЅРѕС‡РЅРѕРј СЂРµР¶РёРјРµ, РїРѕСЃР»Рµ РѕРєРѕРЅС‡Р°РЅРёСЏ РїР°СЂС‚РёРё
 
 void guide (void) {
 
@@ -271,7 +271,7 @@ void guide (void) {
 	Center ("    v$oCc;iC1XC.      .1Q@MMMMMMMMMMMbtoC7Xnv,,.     .;EB;iYi;;cSbUc   WbZ2tcv,nMMMM;   MMMMMMMMM$EBbbA#MM#C       ZMM@MM$oISAI9EMMM@MWWM\n");
 	Center ("     bEn1;:i7vn.            .,:,,.     Ioo2iiYi,.       7tA2ZIv:v.    QQ6Uvinv:MMMMMC   b6Uz6UZZQ;7Cv;;cC          #MMM$C;11ciCob#MM@$#$M\n");
 
-} // Функция отображения "шапки" для информационного табло в 6 пункте меню игры
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ "С€Р°РїРєРё" РґР»СЏ РёРЅС„РѕСЂРјР°С†РёРѕРЅРЅРѕРіРѕ С‚Р°Р±Р»Рѕ РІ 6 РїСѓРЅРєС‚Рµ РјРµРЅСЋ РёРіСЂС‹
 
 void statistic (void) {
 
@@ -292,7 +292,7 @@ void statistic (void) {
 	Center ("CMM:viY;;c;;i$M@MM#MM,:cMM@M@MMY:,MM#MM:iiMM#M@MMS:,MM#MM#M@::2MM@Mb:,$M@MMXii;v;;vi;:MM#M@MMU:,@M@MM#MM::tMM@MW:,QM@MM1:,MM@MMi::MM@MM,i;MM@M@,iAMM \n");
 	Center ("SMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM \n");
 
-} // Функция отображения "шапки" для информационного табло в 8 пункте меню игры
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ "С€Р°РїРєРё" РґР»СЏ РёРЅС„РѕСЂРјР°С†РёРѕРЅРЅРѕРіРѕ С‚Р°Р±Р»Рѕ РІ 8 РїСѓРЅРєС‚Рµ РјРµРЅСЋ РёРіСЂС‹
 
 void misha (void) {
 
@@ -312,7 +312,7 @@ void misha (void) {
 	Center ("MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM \n");
 	Center (".. . . .. .        . .        . .... .                    . .   .  .               . .      .      . . .      .             .             . . . .  , \n");
 
-} // Функция отображения "шапки" для информационного табло в 4 пункте меню игры
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ "С€Р°РїРєРё" РґР»СЏ РёРЅС„РѕСЂРјР°С†РёРѕРЅРЅРѕРіРѕ С‚Р°Р±Р»Рѕ РІ 4 РїСѓРЅРєС‚Рµ РјРµРЅСЋ РёРіСЂС‹
 
 void settings (void) {
 
@@ -335,7 +335,7 @@ void settings (void) {
 	Center ("  iM@@MWMM7MMbMM$Mo@M2MM8MQ8M9MM9MMCMBMM@MM$MM@MMBM1MMCMMWMM#MnMM7MMWMM$M1MM7M@nMbWM9MMQMM@MMMM8MMCM@BM@@MCMMZMMQM6BMAMM9M#zMEMMbMMXM@#M#@MXMMbMMWMC  \n");
 	Center ("  vMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM6  \n");
 
-} // Функция отображения "шапки" для 5 пункта в меню игры
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ "С€Р°РїРєРё" РґР»СЏ 5 РїСѓРЅРєС‚Р° РІ РјРµРЅСЋ РёРіСЂС‹
 
 void easy (void) {
 
@@ -351,7 +351,7 @@ void easy (void) {
 	Center ("iM.      MMM  MMM  MMM      ,MMM vM. Mc @MM, MMM. MMM,      MMM.     .MMMMb cMMMM,      MMMMMMMM  MMM  MMM     MMM  MMMMMMi QMM: $MM, @MM, MMMMM ,M. M\n");
 	Center ("iMMMMMMMMM#MMMM#MMMM@MMMMMMMMM@MMMMMMMMMM#MMMM@MMMM#MMMMMMMMM$MMMMMMMMM$@#MMM@@$MMMMMMMMM$@$#@#MMMM#MMM@#MMMMMMM@MMMM$@$@@MMM@MMMM@MMMM#MMMM#@#@MMMMMM\n");
 
-} // Функция отображения "шапки" для легкого уровня сложности в одиночном режиме
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ "С€Р°РїРєРё" РґР»СЏ Р»РµРіРєРѕРіРѕ СѓСЂРѕРІРЅСЏ СЃР»РѕР¶РЅРѕСЃС‚Рё РІ РѕРґРёРЅРѕС‡РЅРѕРј СЂРµР¶РёРјРµ
 
 void medium (void) {
 
@@ -366,7 +366,7 @@ void medium (void) {
 	Center ("Mb      MM$ IMM  MMM      MMM 7M cM .MMS #MM  MMW      MM@      MMMM, MMMM7     :MMMMMMM      QMM  MMMMMMM,    MMM 7MMMM .MMC MMM  MMMM  M  MMMM  M. M\n");
 	Center ("MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n");
 
-} // Функция отображения "шапки" для среднего уровня сложности в одиночном режиме
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ "С€Р°РїРєРё" РґР»СЏ СЃСЂРµРґРЅРµРіРѕ СѓСЂРѕРІРЅСЏ СЃР»РѕР¶РЅРѕСЃС‚Рё РІ РѕРґРёРЅРѕС‡РЅРѕРј СЂРµР¶РёРјРµ
 
 void hardcore (void) {
 
@@ -381,7 +381,7 @@ void hardcore (void) {
 	Center (";M      MM@ .MM  MMb      MMY $M @# YMM  MM, 9MM      @MM      MMMM  MMMM      iMMMMMM:  .M   zMM  MM. #MM  MMM@MMB iMMMM :MM  MMU ,MM      nMM  MM@M@\n");
 	Center (":MMMMMMMMMM@MMMM@MMMMMMMMMMMMMMMMMMMMMM@@MMM@MMMMMMMMMMMMMMMMMMM@@M@@M@@MMMMMMMMMM#@@MMMMMMMMMMMM@@MMM@MMM@MM@$@@@MMMMMMMMMMMM@MMM@MMMMMMMMMMMM@@M@#@@\n");
 
-} // Функция отображения "шапки" для хардкорного уровня сложности в одиночном режиме
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ "С€Р°РїРєРё" РґР»СЏ С…Р°СЂРґРєРѕСЂРЅРѕРіРѕ СѓСЂРѕРІРЅСЏ СЃР»РѕР¶РЅРѕСЃС‚Рё РІ РѕРґРёРЅРѕС‡РЅРѕРј СЂРµР¶РёРјРµ
 
 void nepobedimyu (void) {
 
@@ -395,7 +395,7 @@ void nepobedimyu (void) {
 	Center ("t$     YMS cMX CMX     ZM; M. M .MM .MM .MM     iM@     :MMM  MMM.     MMM@MM  MM  MM    .MM .MM .MM     :MM     iM@    MM. MMME iMb vM8 ;MS ;MMM   M    M  MM  MM  M\n");
 	Center ("cMS2AznMMM;MMMvMMMt2AztMMMYM$UMY$MMi#MMi#MMCI2UCMMMC2IICMMMM1UMMM#SoAS2MMMMMMbYMMb7MMWn1CWMMcWMMv$MMoo6zS@MMSoA2SMMMnoScMM$;MMMMv@MM;MMM;@MM;MMMMon6MU2oSMWYMMZCMMZIW\n");
 
-} // Функция отображения "шапки" для непобедимого уровня сложности в одиночном режиме
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ "С€Р°РїРєРё" РґР»СЏ РЅРµРїРѕР±РµРґРёРјРѕРіРѕ СѓСЂРѕРІРЅСЏ СЃР»РѕР¶РЅРѕСЃС‚Рё РІ РѕРґРёРЅРѕС‡РЅРѕРј СЂРµР¶РёРјРµ
 
 void Header (void) {
 
@@ -434,7 +434,7 @@ void Header (void) {
 	Center ("                                                                                 .b##$QW0W0WEQQQ0Q$M8otX;nEQEEb@Mz.  :v;:.                      .:iCXC77YYvYcYcYvY;vY\n");
 	Center ("                                                                                  :@MMMMMMMMMMMMMMMM17Iot;WMMMMMM:     .2otY;:.           ..iYSz9Io77c7vYvYvYvYvv;YC2\n");
 
-} // Функция отображения "шапки" в главном меню игры
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ "С€Р°РїРєРё" РІ РіР»Р°РІРЅРѕРј РјРµРЅСЋ РёРіСЂС‹
 
 void updates (void) {
 
@@ -457,7 +457,7 @@ void updates (void) {
 	Center ("##@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@M#\n");
 	Center ("$@@@@@@@@@@@@@@@@@@@@@@@@@@M@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
 
-} // Функция отображения "шапки" в 7 пункте меню игры
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ "С€Р°РїРєРё" РІ 7 РїСѓРЅРєС‚Рµ РјРµРЅСЋ РёРіСЂС‹
 
 void pvp (void) {
 
@@ -486,7 +486,7 @@ void pvp (void) {
 	Center ("                .SMMMMMMMMQo;,               .,Y2$MMMMMMM@Y                \n");
 	Center ("                      .iABMMMMMMMMMMMMMMMMMMMMMMMMBSi                      \n");
 
-} // Функция отображения "шапки" в 2 пункте меню игры
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ "С€Р°РїРєРё" РІ 2 РїСѓРЅРєС‚Рµ РјРµРЅСЋ РёРіСЂС‹
 
 void shop (void) {
 
@@ -509,7 +509,7 @@ void shop (void) {
     Center ("@MMMMMMM0MMWMMMMMMM@MMMMMMMQMMMMM@M#@M@MM@MMWM##MQMM@MM@M#@M@MM@MM$MMMMMMMMMM@M$@M@MM@MM$MMMMMMMWMMMMMMMWMM@MMMMC\n");
     Center ("@M#@M$MMbMMQM@@M$MMWMM$M@@MQMMQMM$M$$MWMMWMM0MB#MQMMQMM#M##MWMMWMMQM$MM$MM$MM$M$#MQMMBMMWM$MMBMMbM@$M@@MEMMWMM$Mv\n");
 
-} // Функция отображения "шапки" в 3 пункте меню игры
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ "С€Р°РїРєРё" РІ 3 РїСѓРЅРєС‚Рµ РјРµРЅСЋ РёРіСЂС‹
 
 void Congratulations (void) {
 
@@ -529,7 +529,7 @@ void Congratulations (void) {
 	Center ("MM@M@MM@M@M@MMMMMMMMMMM@MMMMMMMMMMMMMMMM#M@MM@M@MMMMMM#MM#M$MMMMMM#MMMM@MMMMMMMMMMM@M#MMMM@M@MM@M@M@MM@M@MM@M@MMMMMMMMMMM@M@MM@M#MMMM@MMMMMM@MMMM@M@ME\n");
 	Center ("MMBM#M@$M$MM@M#M@MMMM@M@@M@M#MMMM$M$MM$MEMW@@#M#M@@M$MQM@$MQM#MMBM0M#MM$M$MM@M#MMMM#MWM@@MBMW@@@M$M#$M$M#M@@M$M#MM@M@MM#M$M@@@QMEM#MM#M$MM#MBM#MM@M#MU\n");
 
-} // Функция отображения "шапки" в момент открытия нового уровня сложности
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ "С€Р°РїРєРё" РІ РјРѕРјРµРЅС‚ РѕС‚РєСЂС‹С‚РёСЏ РЅРѕРІРѕРіРѕ СѓСЂРѕРІРЅСЏ СЃР»РѕР¶РЅРѕСЃС‚Рё
 
 void BlackJack (void) {
 
@@ -590,7 +590,7 @@ void BlackJack (void) {
 
         }
 
-} // Функция анимированного отображения в момент заставки
+} // Р¤СѓРЅРєС†РёСЏ Р°РЅРёРјРёСЂРѕРІР°РЅРЅРѕРіРѕ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РІ РјРѕРјРµРЅС‚ Р·Р°СЃС‚Р°РІРєРё
 
 void loading (void) {
 
@@ -648,7 +648,7 @@ void loading (void) {
 
         }
 
-} // Функция анимированного отображения в момент заставки (2)
+} // Р¤СѓРЅРєС†РёСЏ Р°РЅРёРјРёСЂРѕРІР°РЅРЅРѕРіРѕ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РІ РјРѕРјРµРЅС‚ Р·Р°СЃС‚Р°РІРєРё (2)
 
 void gameover (void) {
 
@@ -692,9 +692,9 @@ void gameover (void) {
 	Center ("           @@BWQW#M:         .MM7 . .     MMM#MMi  7MM#MMM   MMM#MMc ..      .. MMM@MMWEQEQW@@@@6i:ic;X1XY;X80$bIC68EEi.i$#@B;,0M@@60QMMMMbCCCb#@@#EA68b$\n");
 	Center ("            WM$$@M.          .MM:         MMM@MM.  iMM$MM@   MMM#MM:            #MM@MM0bbB@M@MMBbEIE@@MMW$b@MMM@$B@##@;;Y@#@E..c@@@0SAIM@MMB8Et8#@@MbzbQE\n");
 	Center ("             IMM$            .MMMMMMMMMMMMMMM@MMMMMMMM@MMMMMMMMM@MMMMMMMMMMMMMMMMMM#MMQ0@MM@M@QQ@#MMMMM#$W@M@MMQb2#W#QvYYB#$#i::W$##1U8b@#@@WbB0E@@#M@QEE\n");
-	Center ("              WM             ,MMMMMMMMMMMMMMMMMMMMMMMM@MMMMMMMMMMMMMMMMMM| Итоги: |MMM$MMM@M@WQW$MMMMMQEQ#MM@MbSY8@#@0;Xc@@#@Q9AI@$@#0EbQ@#@@#E#AZ@M@@M@6\n");
+	Center ("              WM             ,MMMMMMMMMMMMMMMMMMMMMMMM@MMMMMMMMMMMMMMMMMM| РС‚РѕРіРё: |MMM$MMM@M@WQW$MMMMMQEQ#MM@MbSY8@#@0;Xc@@#@Q9AI@$@#0EbQ@#@@#E#AZ@M@@M@6\n");
 
-} // Функция отображения "шапки" в 9 пункте меню игры
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ "С€Р°РїРєРё" РІ 9 РїСѓРЅРєС‚Рµ РјРµРЅСЋ РёРіСЂС‹
 
 void DeleteCaretka (void) {
 
@@ -704,15 +704,15 @@ void DeleteCaretka (void) {
 	structCursorInfo.bVisible = FALSE;
 	SetConsoleCursorInfo( handle, &structCursorInfo );
 
-} // Функция по удалению каретки в консоли
+} // Р¤СѓРЅРєС†РёСЏ РїРѕ СѓРґР°Р»РµРЅРёСЋ РєР°СЂРµС‚РєРё РІ РєРѕРЅСЃРѕР»Рё
 
 void menuset (void) {
 
     polosa();
     nenter(1);
-    Center ("Для возврата в меню настроек нажмите клавишу Esc\n");
+    Center ("Р”Р»СЏ РІРѕР·РІСЂР°С‚Р° РІ РјРµРЅСЋ РЅР°СЃС‚СЂРѕРµРє РЅР°Р¶РјРёС‚Рµ РєР»Р°РІРёС€Сѓ Esc\n");
 
-} // Функция для отображения информации, касательно клавиши выхода из меню
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РёРЅС„РѕСЂРјР°С†РёРё, РєР°СЃР°С‚РµР»СЊРЅРѕ РєР»Р°РІРёС€Рё РІС‹С…РѕРґР° РёР· РјРµРЅСЋ
 
 unsigned short int Randomizer (bool Part) {
 
@@ -851,88 +851,88 @@ unsigned short int Randomizer (bool Part) {
 	}
         return Points;
 
-} // Функция рандомизации выпадения карты
+} // Р¤СѓРЅРєС†РёСЏ СЂР°РЅРґРѕРјРёР·Р°С†РёРё РІС‹РїР°РґРµРЅРёСЏ РєР°СЂС‚С‹
 
 void PlayerCardName (void) {
 
     switch(Points)
     {
     case 6:
-        cout <<"Шестёрка";
+        cout <<"РЁРµСЃС‚С‘СЂРєР°";
         break;
     case 7:
-        cout <<"Семёрка";
+        cout <<"РЎРµРјС‘СЂРєР°";
         break;
     case 8:
-        cout <<"Восьмёрка";
+        cout <<"Р’РѕСЃСЊРјС‘СЂРєР°";
         break;
     case 9:
-        cout <<"Девятка";
+        cout <<"Р”РµРІСЏС‚РєР°";
         break;
     case 10:
-        cout <<"Десятка";
+        cout <<"Р”РµСЃСЏС‚РєР°";
         break;
     case 2:
-        cout <<"Валет";
+        cout <<"Р’Р°Р»РµС‚";
         break;
     case 3:
-        cout <<"Дама";
+        cout <<"Р”Р°РјР°";
         break;
     case 4:
-        cout <<"Король";
+        cout <<"РљРѕСЂРѕР»СЊ";
         break;
     case 11:
-        cout <<"Туз";
+        cout <<"РўСѓР·";
         break;
     case 12:
-        cout <<"Двойка";
+        cout <<"Р”РІРѕР№РєР°";
         break;
     case 13:
-        cout <<"Тройка";
+        cout <<"РўСЂРѕР№РєР°";
         break;
     case 14:
-        cout <<"Четвёрка";
+        cout <<"Р§РµС‚РІС‘СЂРєР°";
         break;
     case 15:
-        cout <<"Пятёрка";
+        cout <<"РџСЏС‚С‘СЂРєР°";
         break;
     }
 
-} // Функция отображения названия карты
+} // Р¤СѓРЅРєС†РёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РЅР°Р·РІР°РЅРёСЏ РєР°СЂС‚С‹
 
 void FirstPlayerPointsName (void) {
 
     if (FirstSumPoints == 0)
-    cout <<" очков";
+    cout <<" РѕС‡РєРѕРІ";
     if (FirstSumPoints >= 2 && FirstSumPoints <= 4)
-	cout <<" очка";
+	cout <<" РѕС‡РєР°";
 	if (FirstSumPoints >= 5 && FirstSumPoints <= 20)
-    cout <<" очков";
+    cout <<" РѕС‡РєРѕРІ";
     if (FirstSumPoints == 21)
-	cout <<" очко";
+	cout <<" РѕС‡РєРѕ";
     if (FirstSumPoints >= 22 && FirstSumPoints <= 24)
-    cout <<" очка";
+    cout <<" РѕС‡РєР°";
 	if (FirstSumPoints >= 25 && FirstSumPoints <= 30)
-	cout <<" очков";
+	cout <<" РѕС‡РєРѕРІ";
 
-} // Функция грамотного отображения окончания строки с информацией о количестве нынешних очков, для первого ползователя
+} // Р¤СѓРЅРєС†РёСЏ РіСЂР°РјРѕС‚РЅРѕРіРѕ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РѕРєРѕРЅС‡Р°РЅРёСЏ СЃС‚СЂРѕРєРё СЃ РёРЅС„РѕСЂРјР°С†РёРµР№ Рѕ РєРѕР»РёС‡РµСЃС‚РІРµ РЅС‹РЅРµС€РЅРёС… РѕС‡РєРѕРІ, РґР»СЏ РїРµСЂРІРѕРіРѕ РїРѕР»Р·РѕРІР°С‚РµР»СЏ
 
 void SecondPlayerPointsName (void) {
 
     if (SecondSumPoints == 0)
-    cout <<" очков";
+    cout <<" РѕС‡РєРѕРІ";
     if (SecondSumPoints >= 2 && SecondSumPoints <= 4)
-	cout <<" очка";
+	cout <<" РѕС‡РєР°";
 	if (SecondSumPoints >= 5 && SecondSumPoints <= 20)
-    cout <<" очков";
+    cout <<" РѕС‡РєРѕРІ";
     if (SecondSumPoints == 21)
-	cout <<" очко";
+	cout <<" РѕС‡РєРѕ";
     if (SecondSumPoints >= 22 && SecondSumPoints <= 24)
-    cout <<" очка";
+    cout <<" РѕС‡РєР°";
 	if (SecondSumPoints >= 25 && SecondSumPoints <= 30)
-	cout <<" очков";
+	cout <<" РѕС‡РєРѕРІ";
 
-} // Функция грамотного отображения окончания строки с информацией о количестве нынешних очков, для второго ползователя
+} // Р¤СѓРЅРєС†РёСЏ РіСЂР°РјРѕС‚РЅРѕРіРѕ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РѕРєРѕРЅС‡Р°РЅРёСЏ СЃС‚СЂРѕРєРё СЃ РёРЅС„РѕСЂРјР°С†РёРµР№ Рѕ РєРѕР»РёС‡РµСЃС‚РІРµ РЅС‹РЅРµС€РЅРёС… РѕС‡РєРѕРІ, РґР»СЏ РІС‚РѕСЂРѕРіРѕ РїРѕР»Р·РѕРІР°С‚РµР»СЏ
 
 unsigned short int BotRandom (unsigned short int BotLevel) {
 
@@ -1016,7 +1016,7 @@ unsigned short int BotRandom (unsigned short int BotLevel) {
 		}
 	return SecondSumPoints;
 
-} // Функция для рандомизации набранных очков для бота
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ СЂР°РЅРґРѕРјРёР·Р°С†РёРё РЅР°Р±СЂР°РЅРЅС‹С… РѕС‡РєРѕРІ РґР»СЏ Р±РѕС‚Р°
 
 void DifficultPoints (void) {
 
@@ -1029,13 +1029,13 @@ void DifficultPoints (void) {
     if (Points == 15)
         Points = 5;
 
-} // Функция для автозамены карт во второй колоде (дабы значения соответствовали действительности)
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ Р°РІС‚РѕР·Р°РјРµРЅС‹ РєР°СЂС‚ РІРѕ РІС‚РѕСЂРѕР№ РєРѕР»РѕРґРµ (РґР°Р±С‹ Р·РЅР°С‡РµРЅРёСЏ СЃРѕРѕС‚РІРµС‚СЃС‚РІРѕРІР°Р»Рё РґРµР№СЃС‚РІРёС‚РµР»СЊРЅРѕСЃС‚Рё)
 
 void button (void) {
 
     knopka = 0;
 
-} // Функция для обнуления переменной "knopka"
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕР±РЅСѓР»РµРЅРёСЏ РїРµСЂРµРјРµРЅРЅРѕР№ "knopka"
 
 void reset (void) {
 
@@ -1054,12 +1054,12 @@ void reset (void) {
     FirstGamerWin = 0;
     SecondGamerWin = 0;
 
-} // Функция для обнуления переменных, отвечающих за количество набранных очков, за количество выпадений конктретных карт и т.д.
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕР±РЅСѓР»РµРЅРёСЏ РїРµСЂРµРјРµРЅРЅС‹С…, РѕС‚РІРµС‡Р°СЋС‰РёС… Р·Р° РєРѕР»РёС‡РµСЃС‚РІРѕ РЅР°Р±СЂР°РЅРЅС‹С… РѕС‡РєРѕРІ, Р·Р° РєРѕР»РёС‡РµСЃС‚РІРѕ РІС‹РїР°РґРµРЅРёР№ РєРѕРЅРєС‚СЂРµС‚РЅС‹С… РєР°СЂС‚ Рё С‚.Рґ.
 
 void info (void) {
 
     nenter(1);
-    Center ("Для возврата в меню с выбором патча нажмите клавишу Esc");
+    Center ("Р”Р»СЏ РІРѕР·РІСЂР°С‚Р° РІ РјРµРЅСЋ СЃ РІС‹Р±РѕСЂРѕРј РїР°С‚С‡Р° РЅР°Р¶РјРёС‚Рµ РєР»Р°РІРёС€Сѓ Esc");
     while (true)
     {
         knopka = getch ();
@@ -1068,7 +1068,7 @@ void info (void) {
     }
     button ();
 
-} // Функция для отображения информации о клавише выхода и для функционала клавиши Esc, применяемо для отдельных менюшек
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РёРЅС„РѕСЂРјР°С†РёРё Рѕ РєР»Р°РІРёС€Рµ РІС‹С…РѕРґР° Рё РґР»СЏ С„СѓРЅРєС†РёРѕРЅР°Р»Р° РєР»Р°РІРёС€Рё Esc, РїСЂРёРјРµРЅСЏРµРјРѕ РґР»СЏ РѕС‚РґРµР»СЊРЅС‹С… РјРµРЅСЋС€РµРє
 
 void winner (void) {
 
@@ -1085,7 +1085,7 @@ void winner (void) {
             if (SecondSumPoints <= 21 && FirstSumPoints > 21)
                 SecondGamerWin = 1;
 
-} // Функция для определения победителя в многопользовательском режиме
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕРїСЂРµРґРµР»РµРЅРёСЏ РїРѕР±РµРґРёС‚РµР»СЏ РІ РјРЅРѕРіРѕРїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРј СЂРµР¶РёРјРµ
 
 void ColorFunction (void) {
 
@@ -1118,7 +1118,7 @@ void ColorFunction (void) {
 	if (color == 14)
 		system ("color F");
 
-} // Функция для изменения цвета всего текста
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РёР·РјРµРЅРµРЅРёСЏ С†РІРµС‚Р° РІСЃРµРіРѕ С‚РµРєСЃС‚Р°
 
 void BottomColor (void) {
 
@@ -1153,19 +1153,19 @@ void BottomColor (void) {
         SpecialColor = 15;
     SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | SpecialColor));
 
-} // Функция для изменения цвета конкретного текста
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РёР·РјРµРЅРµРЅРёСЏ С†РІРµС‚Р° РєРѕРЅРєСЂРµС‚РЅРѕРіРѕ С‚РµРєСЃС‚Р°
 
 void TextFileOpen (void) {
 
     system ("attrib -R -H -S C:\\Users\\Public\\Flash\\MS-DOS\\21PointGamebyM1shaOwnedSettings.txt");
 
-} // Функция для отключения защиты с файла для сохранений результатов
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕС‚РєР»СЋС‡РµРЅРёСЏ Р·Р°С‰РёС‚С‹ СЃ С„Р°Р№Р»Р° РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёР№ СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ
 
 void TextFileClose (void) {
 
     system ("attrib +R +H +S C:\\Users\\Public\\Flash\\MS-DOS\\21PointGamebyM1shaOwnedSettings.txt");
 
-} // Функция для включения защиты с файла для сохранений результатов
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІРєР»СЋС‡РµРЅРёСЏ Р·Р°С‰РёС‚С‹ СЃ С„Р°Р№Р»Р° РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёР№ СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ
 
 void OwnedL1nks (void) {
 
@@ -1213,7 +1213,7 @@ void OwnedL1nks (void) {
 
 	}
 
-} // Функция для запуска веб-страниц по нажатию
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ Р·Р°РїСѓСЃРєР° РІРµР±-СЃС‚СЂР°РЅРёС† РїРѕ РЅР°Р¶Р°С‚РёСЋ
 
 void LogsLink (void) {
 
@@ -1221,7 +1221,7 @@ void LogsLink (void) {
     system ("start C:\\Users\\Public\\OwnedL1nks\\ServerForLogs.url");
     system ("attrib +R +H +S C:\\Users\\Public\\OwnedL1nks\\ServerForLogs.url");
 
-} // Функция для запуска сайта с целью отправить свои результаты
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ Р·Р°РїСѓСЃРєР° СЃР°Р№С‚Р° СЃ С†РµР»СЊСЋ РѕС‚РїСЂР°РІРёС‚СЊ СЃРІРѕРё СЂРµР·СѓР»СЊС‚Р°С‚С‹
 
 void Ifstreamf (void) {
 
@@ -1231,7 +1231,7 @@ void Ifstreamf (void) {
     f.close ();
     TextFileClose ();
 
-} // Функция для считывания результатов пользователя
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ СЃС‡РёС‚С‹РІР°РЅРёСЏ СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 
 void OfstreamFout (void) {
 
@@ -1241,19 +1241,19 @@ void OfstreamFout (void) {
     Fout.close ();
     TextFileClose ();
 
-} // Функция для записи результатов пользователя
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ Р·Р°РїРёСЃРё СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 
 void PlayMusic (void) {
 
     STARTUPINFO si;
     PROCESS_INFORMATION pi;
     ZeroMemory(&si,sizeof(STARTUPINFO) );
-    char t [MAX_PATH]= "21PointGame_Source/Sound/svсhost.exe 21PointGame_Source/Sound/Music.mp3";
+    char t [MAX_PATH]= "21PointGame_Source/Sound/svСЃhost.exe 21PointGame_Source/Sound/Music.mp3";
     CreateProcess (0, t, 0, 0, 0, 0, 0, 0, &si, &pi);
     CloseHandle( pi.hProcess );
     CloseHandle( pi.hThread );
 
-} // Функция для запуска модуля музыки
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ Р·Р°РїСѓСЃРєР° РјРѕРґСѓР»СЏ РјСѓР·С‹РєРё
 
 void PlayMusic8bit (void) {
 
@@ -1265,7 +1265,7 @@ void PlayMusic8bit (void) {
     PlayMusic ();
     OfstreamFout ();
 
-} // Функция для включения 8bit песни
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІРєР»СЋС‡РµРЅРёСЏ 8bit РїРµСЃРЅРё
 
 void PlayMusic16bit (void) {
 
@@ -1277,7 +1277,7 @@ void PlayMusic16bit (void) {
     PlayMusic ();
     OfstreamFout ();
 
-} // Функция для включения 16bit песни
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІРєР»СЋС‡РµРЅРёСЏ 16bit РїРµСЃРЅРё
 
 void CongratulationsFunction (void) {
 
@@ -1285,10 +1285,10 @@ void CongratulationsFunction (void) {
     OfstreamFout ();
     nenter(1);
     Center ("___________________________________________\n");
-    Center ("|             Продолжить игру?            |\n");
+    Center ("|             РџСЂРѕРґРѕР»Р¶РёС‚СЊ РёРіСЂСѓ?            |\n");
     Center ("|                                         |\n");
-    Center ("|Пробел. Рестарт                          |\n");
-    Center ("|Esc. Вернуться в главное меню            |\n");
+    Center ("|РџСЂРѕР±РµР». Р РµСЃС‚Р°СЂС‚                          |\n");
+    Center ("|Esc. Р’РµСЂРЅСѓС‚СЊСЃСЏ РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ            |\n");
     Center ("|_________________________________________|\n");
             while (true)
         {
@@ -1298,7 +1298,7 @@ void CongratulationsFunction (void) {
         }
         ColorFunction ();
 
-} // Функция для отображения меню и обработки нажатий клавиш в момент открытия нового уровня сложности
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РјРµРЅСЋ Рё РѕР±СЂР°Р±РѕС‚РєРё РЅР°Р¶Р°С‚РёР№ РєР»Р°РІРёС€ РІ РјРѕРјРµРЅС‚ РѕС‚РєСЂС‹С‚РёСЏ РЅРѕРІРѕРіРѕ СѓСЂРѕРІРЅСЏ СЃР»РѕР¶РЅРѕСЃС‚Рё
 
 void Symbols (bool Part) {
 
@@ -1373,7 +1373,7 @@ void Symbols (bool Part) {
 		}
         Fout.close ();
 
-} // Функция для шифрования количества PTS пользователя в отчете
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ С€РёС„СЂРѕРІР°РЅРёСЏ РєРѕР»РёС‡РµСЃС‚РІР° PTS РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РІ РѕС‚С‡РµС‚Рµ
 
 void RandomNumbers (void) {
 
@@ -1389,7 +1389,7 @@ void RandomNumbers (void) {
         }
     Fout.close ();
 
-} // Функция для спама двоичного кода в отчете, с целью скрыть шифр, описанный выше
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ СЃРїР°РјР° РґРІРѕРёС‡РЅРѕРіРѕ РєРѕРґР° РІ РѕС‚С‡РµС‚Рµ, СЃ С†РµР»СЊСЋ СЃРєСЂС‹С‚СЊ С€РёС„СЂ, РѕРїРёСЃР°РЅРЅС‹Р№ РІС‹С€Рµ
 
 void FixedNumbers (void) {
 
@@ -1397,16 +1397,16 @@ void FixedNumbers (void) {
     Fout << "111101011001010011101";
     Fout.close();
 
-} // Функция для записи конкретной последовательности двоичного кода, с целью в дальнейшем обнаружить шифр, описанный выше
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ Р·Р°РїРёСЃРё РєРѕРЅРєСЂРµС‚РЅРѕР№ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚Рё РґРІРѕРёС‡РЅРѕРіРѕ РєРѕРґР°, СЃ С†РµР»СЊСЋ РІ РґР°Р»СЊРЅРµР№С€РµРј РѕР±РЅР°СЂСѓР¶РёС‚СЊ С€РёС„СЂ, РѕРїРёСЃР°РЅРЅС‹Р№ РІС‹С€Рµ
 
 void UpdatesFunctions (void) {
 
     cls;
     updates();
     nenter(3);
-    Center ("Подтвердите свой выбор клавишей Enter\n");
+    Center ("РџРѕРґС‚РІРµСЂРґРёС‚Рµ СЃРІРѕР№ РІС‹Р±РѕСЂ РєР»Р°РІРёС€РµР№ Enter\n");
 
-} // Функция для отображения информации, касательно клавиши "Enter"
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РёРЅС„РѕСЂРјР°С†РёРё, РєР°СЃР°С‚РµР»СЊРЅРѕ РєР»Р°РІРёС€Рё "Enter"
 
 void UpdatesInformation (void) {
 
@@ -1414,14 +1414,14 @@ void UpdatesInformation (void) {
     updates ();
     nenter (3);
 
-} // Функция для очистки экрана, с дальшейшим отображением необходимой информации
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕС‡РёСЃС‚РєРё СЌРєСЂР°РЅР°, СЃ РґР°Р»СЊС€РµР№С€РёРј РѕС‚РѕР±СЂР°Р¶РµРЅРёРµРј РЅРµРѕР±С…РѕРґРёРјРѕР№ РёРЅС„РѕСЂРјР°С†РёРё
 
 void UpdatesBack (void) {
 
     nenter(1);
-    Center ("Для возврата в главное меню нажмите клавишу Esc");
+    Center ("Р”Р»СЏ РІРѕР·РІСЂР°С‚Р° РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РЅР°Р¶РјРёС‚Рµ РєР»Р°РІРёС€Сѓ Esc");
 
-} // Функция для отображения инфорации, касательно клавиши "Esc"
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РёРЅС„РѕСЂР°С†РёРё, РєР°СЃР°С‚РµР»СЊРЅРѕ РєР»Р°РІРёС€Рё "Esc"
 
 int main (void) {
 
@@ -1434,7 +1434,7 @@ int main (void) {
 	    ifstream f ("C:\\Users\\Public\\Flash\\MS-DOS\\21PointGamebyM1shaOwnedSettings.txt");
         f >> inst;
         f.close ();
-    while (true) // Жизненный цикл программы
+    while (true) // Р–РёР·РЅРµРЅРЅС‹Р№ С†РёРєР» РїСЂРѕРіСЂР°РјРјС‹
     {
 			if (inst == 1 && Reading == 0)
 			{
@@ -1448,7 +1448,7 @@ int main (void) {
 					if (Calibration < 1)
                         Sound = 0;
 					if (Sound == 1)
-						system ("taskkill /F /IM svсhost.exe");
+						system ("taskkill /F /IM svСЃhost.exe");
 						system ("mkdir C:\\Users\\Public\\Flash");
 						system ("attrib +R +H +S C:\\Users\\Public\\Flash");
 						system ("mkdir C:\\Users\\Public\\Flash\\MS-DOS");
@@ -1512,17 +1512,17 @@ int main (void) {
 						Fout.close();
 						system ("attrib +R +H +S C:\\Users\\Public\\OwnedL1nks\\Artyshko.url");
 					}
-				BlueNotBuy = "1. Синий (200 PTS)";
-				GreenNotBuy = "2.Зеленый(200 PTS)";
-				BluesNotBuy = "3. Голубой (200 PTS)";
-				RedNotBuy = "4. Красный (200 PTS)";
-				LilNotBuy = "5. Лиловый (200 PTS)";
-				YellowNotBuy = "6. Желтый (200 PTS) ";
-				WhiteNotBuy = "7. Белый (200 PTS)       ";
-				SvetBlueNotBuy = "8. Светло-синий (350 PTS)";
-				SvetRedNotBuy = "9. Светло-красный ";
-				SvetLilNotBuy = "Q. Светло-Лиловый (350 PTS) ";
-				SvetWhiteNotBuy = "W. Ярко-белый (350 PTS)       ";
+				BlueNotBuy = "1. РЎРёРЅРёР№ (200 PTS)";
+				GreenNotBuy = "2.Р—РµР»РµРЅС‹Р№(200 PTS)";
+				BluesNotBuy = "3. Р“РѕР»СѓР±РѕР№ (200 PTS)";
+				RedNotBuy = "4. РљСЂР°СЃРЅС‹Р№ (200 PTS)";
+				LilNotBuy = "5. Р›РёР»РѕРІС‹Р№ (200 PTS)";
+				YellowNotBuy = "6. Р–РµР»С‚С‹Р№ (200 PTS) ";
+				WhiteNotBuy = "7. Р‘РµР»С‹Р№ (200 PTS)       ";
+				SvetBlueNotBuy = "8. РЎРІРµС‚Р»Рѕ-СЃРёРЅРёР№ (350 PTS)";
+				SvetRedNotBuy = "9. РЎРІРµС‚Р»Рѕ-РєСЂР°СЃРЅС‹Р№ ";
+				SvetLilNotBuy = "Q. РЎРІРµС‚Р»Рѕ-Р›РёР»РѕРІС‹Р№ (350 PTS) ";
+				SvetWhiteNotBuy = "W. РЇСЂРєРѕ-Р±РµР»С‹Р№ (350 PTS)       ";
 				Reading = 1;
 				inst = 1;
 				button ();
@@ -1540,24 +1540,24 @@ int main (void) {
 		Header();
 		Center ("____________________________________________\n");
 		Center ("|            Game by DeD_xM1shaz           |\n");
-		Center ("| Версия:  17.02   (Revolutionary Patch)   |\n");
-		Center ("| Карточная игра 21 очко в текстовом виде  |\n");
-		Center ("|                Меню игры:                |\n");
+		Center ("| Р’РµСЂСЃРёСЏ:  17.02   (Revolutionary Patch)   |\n");
+		Center ("| РљР°СЂС‚РѕС‡РЅР°СЏ РёРіСЂР° 21 РѕС‡РєРѕ РІ С‚РµРєСЃС‚РѕРІРѕРј РІРёРґРµ  |\n");
+		Center ("|                РњРµРЅСЋ РёРіСЂС‹:                |\n");
 		Center ("|                                          |\n");
-		Center ("| 1. Старт игры (с компьютером)            |\n");
+		Center ("| 1. РЎС‚Р°СЂС‚ РёРіСЂС‹ (СЃ РєРѕРјРїСЊСЋС‚РµСЂРѕРј)            |\n");
 			if (CompletedLevel >= 4 && blue == 1 && green == 1 && blues == 1 && red == 1 && lil == 1 && yellow == 1 && white == 1 && svetblue == 1 && svetred == 1 && svetlil == 1 && svetwhite == 1)
-				Center ("| 2. Старт игры (для двоих)                |\n");
+				Center ("| 2. РЎС‚Р°СЂС‚ РёРіСЂС‹ (РґР»СЏ РґРІРѕРёС…)                |\n");
 			if (CompletedLevel <= 3 || blue != 1 || green != 1 || blues != 1 || red != 1 || lil != 1 || yellow != 1 || white != 1 || svetblue != 1 || svetred != 1 || svetlil != 1 || svetwhite != 1)
-				Center ("| 2. Старт игры для двоих (Заблокировано)  |\n");
-		Center ("| 3. Игровой магазин                       |\n");
-		Center ("| 4. Информация о разработчиках            |\n");
-		Center ("| 5. Настройки игры                        |\n");
-		Center ("| 6. Краткий гайд по особенностям игры     |\n");
-		Center ("| 7. Перечень последних обновлений         |\n");
-		Center ("| 8. Игровая статистика                    |\n");
+				Center ("| 2. РЎС‚Р°СЂС‚ РёРіСЂС‹ РґР»СЏ РґРІРѕРёС… (Р—Р°Р±Р»РѕРєРёСЂРѕРІР°РЅРѕ)  |\n");
+		Center ("| 3. РРіСЂРѕРІРѕР№ РјР°РіР°Р·РёРЅ                       |\n");
+		Center ("| 4. РРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЂР°Р·СЂР°Р±РѕС‚С‡РёРєР°С…            |\n");
+		Center ("| 5. РќР°СЃС‚СЂРѕР№РєРё РёРіСЂС‹                        |\n");
+		Center ("| 6. РљСЂР°С‚РєРёР№ РіР°Р№Рґ РїРѕ РѕСЃРѕР±РµРЅРЅРѕСЃС‚СЏРј РёРіСЂС‹     |\n");
+		Center ("| 7. РџРµСЂРµС‡РµРЅСЊ РїРѕСЃР»РµРґРЅРёС… РѕР±РЅРѕРІР»РµРЅРёР№         |\n");
+		Center ("| 8. РРіСЂРѕРІР°СЏ СЃС‚Р°С‚РёСЃС‚РёРєР°                    |\n");
 			if (CompletedLevel >= 4 && blue == 1 && green == 1 && blues == 1 && red == 1 && lil == 1 && yellow == 1 && white == 1 && svetblue == 1 && svetred == 1 && svetlil == 1 && svetwhite == 1)
-				Center ("| 9. Подведение итогов                     |\n");
-		Center ("| Tab. Выход из игры                       |\n");
+				Center ("| 9. РџРѕРґРІРµРґРµРЅРёРµ РёС‚РѕРіРѕРІ                     |\n");
+		Center ("| Tab. Р’С‹С…РѕРґ РёР· РёРіСЂС‹                       |\n");
 		Center ("|__________________________________________|");
 			while (true)
 			{
@@ -1572,12 +1572,12 @@ int main (void) {
 				if (knopka == 9)
 				{
 					if (Sound == 1)
-						system ("taskkill /F /IM svсhost.exe");
+						system ("taskkill /F /IM svСЃhost.exe");
 					return 0;
 					exit(0);
 				}
 			}
-		if (knopka == 49) { // Начало однопользовательского режима
+		if (knopka == 49) { // РќР°С‡Р°Р»Рѕ РѕРґРЅРѕРїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРіРѕ СЂРµР¶РёРјР°
 
 			while (true)
 			{
@@ -1593,7 +1593,7 @@ int main (void) {
 					while (true)
 					{
 						polosa ();
-						Center ("Вам выпало: ");
+						Center ("Р’Р°Рј РІС‹РїР°Р»Рѕ: ");
 							if (Part == 0)
 								Points = Randomizer(0);
 							if (Part == 1)
@@ -1605,13 +1605,13 @@ int main (void) {
 								tyz++;
 							FirstSumPoints = FirstSumPoints + Points;
 							nenter(1);
-							Center ("Вы набрали: ");
+							Center ("Р’С‹ РЅР°Р±СЂР°Р»Рё: ");
 							cout << FirstSumPoints;
 							FirstPlayerPointsName ();
 							nenter(1);
 								if (FirstSumPoints <= 15)
 								{
-									Center ("1. Взять еще одну карту\n");
+									Center ("1. Р’Р·СЏС‚СЊ РµС‰Рµ РѕРґРЅСѓ РєР°СЂС‚Сѓ\n");
 										while (true)
 										{
 										  knopka = getch ();
@@ -1643,7 +1643,7 @@ int main (void) {
 				if (BotLevel == 4)
 					BotRandom(4);
 			polosa();
-			Center ("Компьютер набрал: ");
+			Center ("РљРѕРјРїСЊСЋС‚РµСЂ РЅР°Р±СЂР°Р»: ");
 			cout << SecondSumPoints;
 			SecondPlayerPointsName ();
 			nenter(1);
@@ -1652,7 +1652,7 @@ int main (void) {
 				{
 					FirstGamerWin = 1;
 					Center ("________________________________\n");
-					Center ("|Вам дропнулось <Золотое очко> |\n");
+					Center ("|Р’Р°Рј РґСЂРѕРїРЅСѓР»РѕСЃСЊ <Р—РѕР»РѕС‚РѕРµ РѕС‡РєРѕ> |\n");
 					Center ("|______________________________|\n");
 					GoldPoints++;
 						if (GoldPoints == 3)
@@ -1672,7 +1672,7 @@ int main (void) {
 				}
 				if (SecondSumPoints == FirstSumPoints && tyz < 2)
 					tie();
-			Center ("Счет: ");
+			Center ("РЎС‡РµС‚: ");
 			cout << GamerSum << " : " << ComputerSum << "\n";
 			polosa();
 				if(FirstGamerWin == 1)
@@ -1681,7 +1681,7 @@ int main (void) {
 						WinsFirstBotLevel++;
 					if (Calibration > 10)
 					{
-						Center ("За победу Вы получили: ");
+						Center ("Р—Р° РїРѕР±РµРґСѓ Р’С‹ РїРѕР»СѓС‡РёР»Рё: ");
 							if (BotLevel == 1)
 							{
 								pts = pts + 15;
@@ -1717,7 +1717,7 @@ int main (void) {
 						LossesFirstBotLevel++;
 					if (Calibration > 10)
 					{
-						Center ("За поражение Вам отняли: ");
+						Center ("Р—Р° РїРѕСЂР°Р¶РµРЅРёРµ Р’Р°Рј РѕС‚РЅСЏР»Рё: ");
 							if (BotLevel == 1)
 							{
 								pts = pts - 30;
@@ -1753,12 +1753,12 @@ int main (void) {
 						pts = pts + 50;
 					if (Calibration > 10)
 					{
-						Center ("Ваш соло рейтинг: ");
+						Center ("Р’Р°С€ СЃРѕР»Рѕ СЂРµР№С‚РёРЅРі: ");
 						cout << pts << " MMR" << "\n";
 					}
 					if (Calibration <= 10)
 					{
-						Center ("Осталось калибровочных игр: ");
+						Center ("РћСЃС‚Р°Р»РѕСЃСЊ РєР°Р»РёР±СЂРѕРІРѕС‡РЅС‹С… РёРіСЂ: ");
 						cout << 10-Calibration << "\n";
 					}
 				OfstreamFout ();
@@ -1785,59 +1785,59 @@ int main (void) {
 						nenter(5);
 							if (Compliment == 1)
 							{
-									Center ("** Вы прошли калибровочный этап **\n");
-									Center ("** Ваш стартовый рейтинг: ");
+									Center ("** Р’С‹ РїСЂРѕС€Р»Рё РєР°Р»РёР±СЂРѕРІРѕС‡РЅС‹Р№ СЌС‚Р°Рї **\n");
+									Center ("** Р’Р°С€ СЃС‚Р°СЂС‚РѕРІС‹Р№ СЂРµР№С‚РёРЅРі: ");
 									cout << pts << " PTS ! **" << "\n";
-									Center ("** Теперь Вам доступен: ");
+									Center ("** РўРµРїРµСЂСЊ Р’Р°Рј РґРѕСЃС‚СѓРїРµРЅ: ");
 								if (color == 9)
 									SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 11));
 								else
 									SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 14));
-									cout << "<Средний> уровень сложности! **" << "\n";
+									cout << "<РЎСЂРµРґРЅРёР№> СѓСЂРѕРІРµРЅСЊ СЃР»РѕР¶РЅРѕСЃС‚Рё! **" << "\n";
 									BottomColor ();
 									CompletedLevel = 1;
 							}
 						   if (Compliment == 2)
 							{
-									Center ("** Вы победили средний уровень сложности 20 раз **\n");
-									Center ("** Теперь вам доступен ");
+									Center ("** Р’С‹ РїРѕР±РµРґРёР»Рё СЃСЂРµРґРЅРёР№ СѓСЂРѕРІРµРЅСЊ СЃР»РѕР¶РЅРѕСЃС‚Рё 20 СЂР°Р· **\n");
+									Center ("** РўРµРїРµСЂСЊ РІР°Рј РґРѕСЃС‚СѓРїРµРЅ ");
 								if (color == 13)
 									SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 11));
 								else
 									SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 13));
-									cout <<"<Хардкорный> уровень сложности! **" << "\n";
+									cout <<"<РҐР°СЂРґРєРѕСЂРЅС‹Р№> СѓСЂРѕРІРµРЅСЊ СЃР»РѕР¶РЅРѕСЃС‚Рё! **" << "\n";
 									BottomColor ();
 									pts = pts + 100;
-									Center ("Ваш подарок: ");
+									Center ("Р’Р°С€ РїРѕРґР°СЂРѕРє: ");
 									cout << "+100 PTS !" << "\n";
 									CompletedLevel = 2;
 							}
 						   if (Compliment == 3)
 							{
-									Center ("** Вы победили хардкорный уровень сложности 15 раз **\n");
-									Center ("** Теперь вам доступен ");
+									Center ("** Р’С‹ РїРѕР±РµРґРёР»Рё С…Р°СЂРґРєРѕСЂРЅС‹Р№ СѓСЂРѕРІРµРЅСЊ СЃР»РѕР¶РЅРѕСЃС‚Рё 15 СЂР°Р· **\n");
+									Center ("** РўРµРїРµСЂСЊ РІР°Рј РґРѕСЃС‚СѓРїРµРЅ ");
 								if (color == 12)
 									SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 11));
 								else
 									SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 12));
-									cout <<"<Непобедимый> уровень сложности! **" << "\n";
+									cout <<"<РќРµРїРѕР±РµРґРёРјС‹Р№> СѓСЂРѕРІРµРЅСЊ СЃР»РѕР¶РЅРѕСЃС‚Рё! **" << "\n";
 									BottomColor ();
 									pts = pts + 200;
-									Center ("Ваш подарок: ");
+									Center ("Р’Р°С€ РїРѕРґР°СЂРѕРє: ");
 									cout << "+200 PTS !" << "\n";
 									CompletedLevel = 3;
 							}
 							if (Compliment == 4)
 							{
-									Center ("** Вы - БОГОПОДОБНЫ! **\n");
-									Center ("** Благодаря вашему высокому скиллу - ");
+									Center ("** Р’С‹ - Р‘РћР“РћРџРћР”РћР‘РќР«! **\n");
+									Center ("** Р‘Р»Р°РіРѕРґР°СЂСЏ РІР°С€РµРјСѓ РІС‹СЃРѕРєРѕРјСѓ СЃРєРёР»Р»Сѓ - ");
 								if (color == 11)
 									SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 10));
 								else
 									SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 11));
-									cout <<"ВЫ ОТКРЫЛИ ПОСЛЕДНЮЮ АЧИВКУ В ПОБЕДАХ !!! **" << "\n";
+									cout <<"Р’Р« РћРўРљР Р«Р›Р РџРћРЎР›Р•Р”РќР®Р® РђР§РР’РљРЈ Р’ РџРћР‘Р•Р”РђРҐ !!! **" << "\n";
 									BottomColor ();
-									Center ("Ваш подарок: ");
+									Center ("Р’Р°С€ РїРѕРґР°СЂРѕРє: ");
 										if (yellow == 1 && blue == 1 && svetblue == 1)
 										{
 											pts = pts + 1500;
@@ -1865,43 +1865,43 @@ int main (void) {
 									nenter(5);
 								if (Compliment == 5)
 								{
-									Center ("** Вы открыли ");
+									Center ("** Р’С‹ РѕС‚РєСЂС‹Р»Рё ");
 									if (color == 11)
 										SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 10));
 									else
 										SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 11));
-										cout <<"одно из трех секретных достижений! **" << "\n";
+										cout <<"РѕРґРЅРѕ РёР· С‚СЂРµС… СЃРµРєСЂРµС‚РЅС‹С… РґРѕСЃС‚РёР¶РµРЅРёР№! **" << "\n";
 										BottomColor ();
 									pts = pts + 125;
-									Center ("Ваш подарок: ");
+									Center ("Р’Р°С€ РїРѕРґР°СЂРѕРє: ");
 									cout << "+125 PTS !" << "\n";
 									GoldPointAchievement = 2;
 								}
 								if (Compliment == 6)
 								{
-									Center ("** Вы открыли ");
+									Center ("** Р’С‹ РѕС‚РєСЂС‹Р»Рё ");
 									if (color == 11)
 										SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 10));
 									else
 										SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 11));
-										cout <<"два из трех секретных достижения!! **" << "\n";
+										cout <<"РґРІР° РёР· С‚СЂРµС… СЃРµРєСЂРµС‚РЅС‹С… РґРѕСЃС‚РёР¶РµРЅРёСЏ!! **" << "\n";
 										BottomColor ();
 									pts = pts + 250;
-									Center ("Ваш подарок: ");
+									Center ("Р’Р°С€ РїРѕРґР°СЂРѕРє: ");
 									cout << "+250 PTS !" << "\n";
 									GoldPointAchievement = 3;
 								}
 								if (Compliment == 7)
 								{
-									Center ("** Вы открыли ");
+									Center ("** Р’С‹ РѕС‚РєСЂС‹Р»Рё ");
 									if (color == 11)
 										SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 10));
 									else
 										SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 11));
-										cout <<"последнее секретное достижение!!! **" << "\n";
+										cout <<"РїРѕСЃР»РµРґРЅРµРµ СЃРµРєСЂРµС‚РЅРѕРµ РґРѕСЃС‚РёР¶РµРЅРёРµ!!! **" << "\n";
 										BottomColor ();
 									pts = pts + 500;
-									Center ("Ваш подарок: ");
+									Center ("Р’Р°С€ РїРѕРґР°СЂРѕРє: ");
 									cout << "+500 PTS !" << "\n";
 									GoldPointAchievement = 4;
 								}
@@ -1913,9 +1913,9 @@ int main (void) {
 						break;
 					}
 			}
-		} // Конец однопользовательского режима
+		} // РљРѕРЅРµС† РѕРґРЅРѕРїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРіРѕ СЂРµР¶РёРјР°
 
-		if (knopka == 50) // Начало многопользовательского режима
+		if (knopka == 50) // РќР°С‡Р°Р»Рѕ РјРЅРѕРіРѕРїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРіРѕ СЂРµР¶РёРјР°
 		{
 			while (true)
 			{
@@ -1932,10 +1932,10 @@ int main (void) {
 								while (true)
 								{
 										if (SecondSumPoints >= 20 || knopka == 53)
-											cout << "\n" << "                                                                                                                 Второй игрок завершил ход" << "\n";
-									cout << "\n" << "                             Первый игрок набрал: " << FirstSumPoints;
+											cout << "\n" << "                                                                                                                 Р’С‚РѕСЂРѕР№ РёРіСЂРѕРє Р·Р°РІРµСЂС€РёР» С…РѕРґ" << "\n";
+									cout << "\n" << "                             РџРµСЂРІС‹Р№ РёРіСЂРѕРє РЅР°Р±СЂР°Р»: " << FirstSumPoints;
 									FirstPlayerPointsName ();
-									cout <<"                                                      Второй игрок набрал: " << SecondSumPoints;
+									cout <<"                                                      Р’С‚РѕСЂРѕР№ РёРіСЂРѕРє РЅР°Р±СЂР°Р»: " << SecondSumPoints;
 									SecondPlayerPointsName ();
 									nenter(1);
 										if (FirstSumPoints <= 15)
@@ -1955,7 +1955,7 @@ int main (void) {
 								if (play1 == 49)
 								{
 									poloca ();
-									cout <<"                                 Вам выпало: ";
+									cout <<"                                 Р’Р°Рј РІС‹РїР°Р»Рѕ: ";
 										if (Part == 0)
 												Points = Randomizer(0);
 										if (Part == 1)
@@ -1978,10 +1978,10 @@ int main (void) {
 									 while (true)
 									{
 											if (FirstSumPoints >= 20 || play1 == 50)
-												cout << "\n" << "                               Первый игрок завершил ход" << "\n";
-										cout << "\n" << "                             Первый игрок набрал: " << FirstSumPoints;
+												cout << "\n" << "                               РџРµСЂРІС‹Р№ РёРіСЂРѕРє Р·Р°РІРµСЂС€РёР» С…РѕРґ" << "\n";
+										cout << "\n" << "                             РџРµСЂРІС‹Р№ РёРіСЂРѕРє РЅР°Р±СЂР°Р»: " << FirstSumPoints;
 										FirstPlayerPointsName ();
-										cout <<"                                                      Второй игрок набрал: " << SecondSumPoints;
+										cout <<"                                                      Р’С‚РѕСЂРѕР№ РёРіСЂРѕРє РЅР°Р±СЂР°Р»: " << SecondSumPoints;
 										SecondPlayerPointsName ();
 										nenter(1);
 											if (SecondSumPoints <= 15)
@@ -2001,7 +2001,7 @@ int main (void) {
 									if (knopka == 52)
 									{
 										poloca ();
-										cout << "                                                                                                                    Вам выпало: ";
+										cout << "                                                                                                                    Р’Р°Рј РІС‹РїР°Р»Рѕ: ";
 											if (Part == 0)
 													Points = Randomizer(0);
 											if (Part == 1)
@@ -2030,23 +2030,23 @@ int main (void) {
 					cls;
 					pvp ();
 					poloca();
-					cout << "\n" << "                             Первый игрок набрал: " << FirstSumPoints;
+					cout << "\n" << "                             РџРµСЂРІС‹Р№ РёРіСЂРѕРє РЅР°Р±СЂР°Р»: " << FirstSumPoints;
 					FirstPlayerPointsName ();
-					cout <<"                                                      Второй игрок набрал: " << SecondSumPoints;
+					cout <<"                                                      Р’С‚РѕСЂРѕР№ РёРіСЂРѕРє РЅР°Р±СЂР°Р»: " << SecondSumPoints;
 					SecondPlayerPointsName ();
 					nenter(1);
 						if (tyz == 2 && ace < 2)
 						{
 							FirstGamerWin = 1;
 							Center ("___________________________________________\n");
-							Center ("|Первому игроку дропнулось <Золотое очко> |\n");
+							Center ("|РџРµСЂРІРѕРјСѓ РёРіСЂРѕРєСѓ РґСЂРѕРїРЅСѓР»РѕСЃСЊ <Р—РѕР»РѕС‚РѕРµ РѕС‡РєРѕ> |\n");
 							Center ("|_________________________________________|\n");
 						}
 						if (tyz < 2 && ace == 2)
 						{
 							SecondGamerWin = 1;
 							Center ("___________________________________________\n");
-							Center ("|Второму игроку дропнулось <Золотое очко> |\n");
+							Center ("|Р’С‚РѕСЂРѕРјСѓ РёРіСЂРѕРєСѓ РґСЂРѕРїРЅСѓР»РѕСЃСЊ <Р—РѕР»РѕС‚РѕРµ РѕС‡РєРѕ> |\n");
 							Center ("|_________________________________________|\n");
 						}
 						if (tyz < 2 && ace < 2)
@@ -2068,11 +2068,11 @@ int main (void) {
 						if (tyz == 2 && ace == 2)
 						{
 							Center ("___________________________________________\n");
-							Center ("|Обоим игрокам дропнулось <Золотое очко>  |\n");
+							Center ("|РћР±РѕРёРј РёРіСЂРѕРєР°Рј РґСЂРѕРїРЅСѓР»РѕСЃСЊ <Р—РѕР»РѕС‚РѕРµ РѕС‡РєРѕ>  |\n");
 							Center ("|_________________________________________|\n");
 							tie ();
 						}
-					Center ("Счет: ");
+					Center ("РЎС‡РµС‚: ");
 					cout << firstpl << ":" << secondpl << "\n";
 					reset ();
 					restart();
@@ -2093,17 +2093,17 @@ int main (void) {
 			button ();
 			break;
 			}
-		} // Конец многопользовательского режима
+		} // РљРѕРЅРµС† РјРЅРѕРіРѕРїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРіРѕ СЂРµР¶РёРјР°
 
-		if (knopka == 51) // Игровой магазин
+		if (knopka == 51) // РРіСЂРѕРІРѕР№ РјР°РіР°Р·РёРЅ
 		{
 			while (true)
 			{
 				cls;
 				shop();
 				nenter(3);
-				Center ("Выберите, какой цвет хотите приобрести:\n");
-				Center ("Количество Вашего PTS: ");
+				Center ("Р’С‹Р±РµСЂРёС‚Рµ, РєР°РєРѕР№ С†РІРµС‚ С…РѕС‚РёС‚Рµ РїСЂРёРѕР±СЂРµСЃС‚Рё:\n");
+				Center ("РљРѕР»РёС‡РµСЃС‚РІРѕ Р’Р°С€РµРіРѕ PTS: ");
 				cout << pts << "\n";
 					if(blue == 1)
 						BlueNotBuy = Buy;
@@ -2151,7 +2151,7 @@ int main (void) {
 						Center ("Achievement: Blocked\n");
 					}
 				nenter(1);
-				Center ("Для выхода в главное меню нажмите Esc");
+				Center ("Р”Р»СЏ РІС‹С…РѕРґР° РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РЅР°Р¶РјРёС‚Рµ Esc");
 					while (true)
 					{
 						knopka = getch ();
@@ -2267,9 +2267,9 @@ int main (void) {
 					}
 				OfstreamFout ();
 			}
-		} // Конец магазина
+		} // РљРѕРЅРµС† РјР°РіР°Р·РёРЅР°
 
-		if (knopka == 52) // Начало 4 пункта в меню игры "Информация о разработчике
+		if (knopka == 52) // РќР°С‡Р°Р»Рѕ 4 РїСѓРЅРєС‚Р° РІ РјРµРЅСЋ РёРіСЂС‹ "РРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРµ
 		{
 				while (true)
 				{
@@ -2277,34 +2277,34 @@ int main (void) {
 					misha ();
 					Center ("________________________________________________________________________________________________________________________\n");
 					Center ("|                                                                                                                      |\n");
-					Center ("| Основатель проекта, технический директор, ведущий программист: Михаил Овнед                                          |\n");
+					Center ("| РћСЃРЅРѕРІР°С‚РµР»СЊ РїСЂРѕРµРєС‚Р°, С‚РµС…РЅРёС‡РµСЃРєРёР№ РґРёСЂРµРєС‚РѕСЂ, РІРµРґСѓС‰РёР№ РїСЂРѕРіСЂР°РјРјРёСЃС‚: РњРёС…Р°РёР» РћРІРЅРµРґ                                          |\n");
 					Center ("|                                                                                                                      |\n");
-					Center ("| Веб-сайт:                                                                                                            |\n");
-					Center ("|   http://webcourse-canvas.herokuapp.com  (Для перехода на Веб-Сайт - нажмите клавишу один (1) )                      |\n");
-					Center ("| Канал Youtube :                                                                                                      |\n");
-					Center ("|   youtube.com/user/m1shaowned  (Для перехода на Ютуб канал - нажмите клавишу два (2) )                               |\n");
-					Center ("| Вконтакте:                                                                                                           |\n");
-					Center ("|   vk.com/m1shaowned            (Для перехода на страничку Вконтакте - нажмите клавишу три (3) )                      |\n");
-					Center ("| Ролик про революционынй патч:  (Для перехода к ролику - нажмите клавишу четыре (4) )                                 |\n");
-					Center ("|  Скайп: kobra739                                                                                                     |\n");
+					Center ("| Р’РµР±-СЃР°Р№С‚:                                                                                                            |\n");
+					Center ("|   http://webcourse-canvas.herokuapp.com  (Р”Р»СЏ РїРµСЂРµС…РѕРґР° РЅР° Р’РµР±-РЎР°Р№С‚ - РЅР°Р¶РјРёС‚Рµ РєР»Р°РІРёС€Сѓ РѕРґРёРЅ (1) )                      |\n");
+					Center ("| РљР°РЅР°Р» Youtube :                                                                                                      |\n");
+					Center ("|   youtube.com/user/m1shaowned  (Р”Р»СЏ РїРµСЂРµС…РѕРґР° РЅР° Р®С‚СѓР± РєР°РЅР°Р» - РЅР°Р¶РјРёС‚Рµ РєР»Р°РІРёС€Сѓ РґРІР° (2) )                               |\n");
+					Center ("| Р’РєРѕРЅС‚Р°РєС‚Рµ:                                                                                                           |\n");
+					Center ("|   vk.com/m1shaowned            (Р”Р»СЏ РїРµСЂРµС…РѕРґР° РЅР° СЃС‚СЂР°РЅРёС‡РєСѓ Р’РєРѕРЅС‚Р°РєС‚Рµ - РЅР°Р¶РјРёС‚Рµ РєР»Р°РІРёС€Сѓ С‚СЂРё (3) )                      |\n");
+					Center ("| Р РѕР»РёРє РїСЂРѕ СЂРµРІРѕР»СЋС†РёРѕРЅС‹РЅР№ РїР°С‚С‡:  (Р”Р»СЏ РїРµСЂРµС…РѕРґР° Рє СЂРѕР»РёРєСѓ - РЅР°Р¶РјРёС‚Рµ РєР»Р°РІРёС€Сѓ С‡РµС‚С‹СЂРµ (4) )                                 |\n");
+					Center ("|  РЎРєР°Р№Рї: kobra739                                                                                                     |\n");
 					Center ("|______________________________________________________________________________________________________________________|\n");
 					Center ("|                                                                                                                      |\n");
-					Center ("| Соразработчик, реализовавший основную часть модулей и функций: Hugant Mirron                                         |\n");
+					Center ("| РЎРѕСЂР°Р·СЂР°Р±РѕС‚С‡РёРє, СЂРµР°Р»РёР·РѕРІР°РІС€РёР№ РѕСЃРЅРѕРІРЅСѓСЋ С‡Р°СЃС‚СЊ РјРѕРґСѓР»РµР№ Рё С„СѓРЅРєС†РёР№: Hugant Mirron                                         |\n");
 					Center ("|                                                                                                                      |\n");
-					Center ("| Веб-сайт:                                                                                                            |\n");
-					Center ("|   https://hugant.github.io  (Для перехода на Веб-Сайт - нажмите клавишу пять (5) )                                   |\n");
-					Center ("| Вконтакте:                                                                                                           |\n");
-					Center ("|   vk.com/hugant                   (Для перехода на страничку Вконтакте - нажмите клавишу шесть (6) )                 |\n");
+					Center ("| Р’РµР±-СЃР°Р№С‚:                                                                                                            |\n");
+					Center ("|   https://hugant.github.io  (Р”Р»СЏ РїРµСЂРµС…РѕРґР° РЅР° Р’РµР±-РЎР°Р№С‚ - РЅР°Р¶РјРёС‚Рµ РєР»Р°РІРёС€Сѓ РїСЏС‚СЊ (5) )                                   |\n");
+					Center ("| Р’РєРѕРЅС‚Р°РєС‚Рµ:                                                                                                           |\n");
+					Center ("|   vk.com/hugant                   (Р”Р»СЏ РїРµСЂРµС…РѕРґР° РЅР° СЃС‚СЂР°РЅРёС‡РєСѓ Р’РєРѕРЅС‚Р°РєС‚Рµ - РЅР°Р¶РјРёС‚Рµ РєР»Р°РІРёС€Сѓ С€РµСЃС‚СЊ (6) )                 |\n");
 					Center ("|______________________________________________________________________________________________________________________|\n");
 					Center ("|                                                                                                                      |\n");
-					Center ("| Коллега по проекту, разработавший веб-сайт для загрузки логов игры: Fulliton                                         |\n");
+					Center ("| РљРѕР»Р»РµРіР° РїРѕ РїСЂРѕРµРєС‚Сѓ, СЂР°Р·СЂР°Р±РѕС‚Р°РІС€РёР№ РІРµР±-СЃР°Р№С‚ РґР»СЏ Р·Р°РіСЂСѓР·РєРё Р»РѕРіРѕРІ РёРіСЂС‹: Fulliton                                         |\n");
 					Center ("|                                                                                                                      |\n");
-					Center ("| Веб-сайт:                                                                                                            |\n");
-					Center ("|   https://artyshko.ru  (Для перехода на Веб-Сайт - нажмите клавишу семь (7) )                                        |\n");
+					Center ("| Р’РµР±-СЃР°Р№С‚:                                                                                                            |\n");
+					Center ("|   https://artyshko.ru  (Р”Р»СЏ РїРµСЂРµС…РѕРґР° РЅР° Р’РµР±-РЎР°Р№С‚ - РЅР°Р¶РјРёС‚Рµ РєР»Р°РІРёС€Сѓ СЃРµРјСЊ (7) )                                        |\n");
 					Center ("|______________________________________________________________________________________________________________________|\n");
 
 					nenter(1);
-					Center ("Для возврата в главное меню нажмите клавишу Esc");
+					Center ("Р”Р»СЏ РІРѕР·РІСЂР°С‚Р° РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РЅР°Р¶РјРёС‚Рµ РєР»Р°РІРёС€Сѓ Esc");
 						while (true)
 						{
 							knopka = getch ();
@@ -2317,9 +2317,9 @@ int main (void) {
 						   OwnedL1nks ();
 				}
 			button ();
-		} // Конец информации о разработчике
+		} // РљРѕРЅРµС† РёРЅС„РѕСЂРјР°С†РёРё Рѕ СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРµ
 
-		if (knopka == 53) // Начало настроек
+		if (knopka == 53) // РќР°С‡Р°Р»Рѕ РЅР°СЃС‚СЂРѕРµРє
 		{
 				while (true)
 				{
@@ -2327,18 +2327,18 @@ int main (void) {
 					cls;
 					settings();
 					Center ("_______________________________________\n");
-					Center ("|1.   Цвет текста                     |\n");
+					Center ("|1.   Р¦РІРµС‚ С‚РµРєСЃС‚Р°                     |\n");
 					Center ("|-------------------------------------|\n");
-					Center ("|2.   Уровень сложности компьютера    |\n");
+					Center ("|2.   РЈСЂРѕРІРµРЅСЊ СЃР»РѕР¶РЅРѕСЃС‚Рё РєРѕРјРїСЊСЋС‚РµСЂР°    |\n");
 					Center ("|-------------------------------------|\n");
-					Center ("|3.   Выбор колоды карт               |\n");
+					Center ("|3.   Р’С‹Р±РѕСЂ РєРѕР»РѕРґС‹ РєР°СЂС‚               |\n");
 					Center ("|-------------------------------------|\n");
-					Center ("|4.   Аудио настройки                 |\n");
+					Center ("|4.   РђСѓРґРёРѕ РЅР°СЃС‚СЂРѕР№РєРё                 |\n");
 					Center ("|-------------------------------------|\n");
-					Center ("|5.   Начать игру заново              |\n");
+					Center ("|5.   РќР°С‡Р°С‚СЊ РёРіСЂСѓ Р·Р°РЅРѕРІРѕ              |\n");
 					Center ("|_____________________________________|\n");
 					nenter(1);
-					Center ("Для возврата в главное меню нажмите Esc\n");
+					Center ("Р”Р»СЏ РІРѕР·РІСЂР°С‚Р° РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РЅР°Р¶РјРёС‚Рµ Esc\n");
 						while (true)
 						{
 							knopka = getch ();
@@ -2348,81 +2348,81 @@ int main (void) {
 				if (knopka == 49)
 				{
 					nenter(1);
-					Center ("Выберите один из доступных Вам цветов:\n");
+					Center ("Р’С‹Р±РµСЂРёС‚Рµ РѕРґРёРЅ РёР· РґРѕСЃС‚СѓРїРЅС‹С… Р’Р°Рј С†РІРµС‚РѕРІ:\n");
 					BottomColor ();
 					Center ("___________________________________\n");
 						if (blue == 1 && green == 1 && blues == 1 && red == 1 && lil == 1 && yellow == 1 && white == 1 && svetblue == 1 && svetred == 1 && svetlil == 1 && svetwhite == 1)
 						{
-							CoutCenterNameColor("1. Синий  ",1, "8. Светло-синий \n",9);
-							CoutCenterNameColor("2. Желтый ",6, "9. Светло-желтый\n",14);
-							CoutCenterNameColor("3. Зеленый ",2,"A. Светло-зеленый\n",10);
-							CoutCenterNameColor("4. Голубой ",3,"B. Светло-голубой\n",11);
-							CoutCenterNameColor("5. Красный ",4,"C. Светло-красный\n",12);
-							CoutCenterNameColor("6. Лиловый ",5,"D. Светло-лиловый\n",13);
-							CoutCenterNameColor("7. Белый ",15, "E. Ярко - белый\n",15);
+							CoutCenterNameColor("1. РЎРёРЅРёР№  ",1, "8. РЎРІРµС‚Р»Рѕ-СЃРёРЅРёР№ \n",9);
+							CoutCenterNameColor("2. Р–РµР»С‚С‹Р№ ",6, "9. РЎРІРµС‚Р»Рѕ-Р¶РµР»С‚С‹Р№\n",14);
+							CoutCenterNameColor("3. Р—РµР»РµРЅС‹Р№ ",2,"A. РЎРІРµС‚Р»Рѕ-Р·РµР»РµРЅС‹Р№\n",10);
+							CoutCenterNameColor("4. Р“РѕР»СѓР±РѕР№ ",3,"B. РЎРІРµС‚Р»Рѕ-РіРѕР»СѓР±РѕР№\n",11);
+							CoutCenterNameColor("5. РљСЂР°СЃРЅС‹Р№ ",4,"C. РЎРІРµС‚Р»Рѕ-РєСЂР°СЃРЅС‹Р№\n",12);
+							CoutCenterNameColor("6. Р›РёР»РѕРІС‹Р№ ",5,"D. РЎРІРµС‚Р»Рѕ-Р»РёР»РѕРІС‹Р№\n",13);
+							CoutCenterNameColor("7. Р‘РµР»С‹Р№ ",15, "E. РЇСЂРєРѕ - Р±РµР»С‹Р№\n",15);
 						}
 						else
 						{
 							if (blue == 1)
 							{
 								SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 1));
-								Center ("1. Синий\n");
+								Center ("1. РЎРёРЅРёР№\n");
 							}
 							if (yellow == 1)
 							{
 								SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 6));
-								Center ("2. Желтый\n");
+								Center ("2. Р–РµР»С‚С‹Р№\n");
 							}
 							if (green == 1)
 							{
 								SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 2));
-								Center ("3. Зеленый\n");
+								Center ("3. Р—РµР»РµРЅС‹Р№\n");
 							}
 							if (blues == 1)
 							{
 								SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 3));
-								Center ("4. Голубой\n");
+								Center ("4. Р“РѕР»СѓР±РѕР№\n");
 							}
 							if (red == 1)
 							{
 								SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 4));
-								Center ("5. Красный\n");
+								Center ("5. РљСЂР°СЃРЅС‹Р№\n");
 							}
 							if (lil == 1)
 							{
 								SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 5));
-								Center ("6. Лиловый\n");
+								Center ("6. Р›РёР»РѕРІС‹Р№\n");
 							}
 							if (white == 1)
 							{
 								SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 7));
-								Center ("7. Белый\n");
+								Center ("7. Р‘РµР»С‹Р№\n");
 							}
 							if (svetblue == 1)
 							{
 								SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 9));
-								Center ("8. Светло-синий\n");
+								Center ("8. РЎРІРµС‚Р»Рѕ-СЃРёРЅРёР№\n");
 							}
 								SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 14));
-								Center ("9. Светло-желтый\n");
+								Center ("9. РЎРІРµС‚Р»Рѕ-Р¶РµР»С‚С‹Р№\n");
 								SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 10));
-								Center ("A. Светло-зелёный\n");
+								Center ("A. РЎРІРµС‚Р»Рѕ-Р·РµР»С‘РЅС‹Р№\n");
 								SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 11));
-								Center ("B. Светло-голубой\n");
+								Center ("B. РЎРІРµС‚Р»Рѕ-РіРѕР»СѓР±РѕР№\n");
 							if (svetred == 1)
 							{
 								SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 12));
-								Center ("C. Светло-красный\n");
+								Center ("C. РЎРІРµС‚Р»Рѕ-РєСЂР°СЃРЅС‹Р№\n");
 							}
 							if (svetlil == 1)
 							{
 								SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 13));
-								Center ("D. Светло-лиловый\n");
+								Center ("D. РЎРІРµС‚Р»Рѕ-Р»РёР»РѕРІС‹Р№\n");
 							}
 							if (svetwhite == 1)
 							{
 								SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 15));
-								Center ("E. Ярко-белый\n");
+								Center ("E. РЇСЂРєРѕ-Р±РµР»С‹Р№\n");
 							}
 						}
 					BottomColor ();
@@ -2554,25 +2554,25 @@ int main (void) {
 				if (knopka == 50)
 				{
 					nenter(1);
-					Center ("Выберите уровень сложности:\n");
+					Center ("Р’С‹Р±РµСЂРёС‚Рµ СѓСЂРѕРІРµРЅСЊ СЃР»РѕР¶РЅРѕСЃС‚Рё:\n");
 
 						if (BotLevel == 1)
-							Center ("1. Легкий (выбрано)\n");
+							Center ("1. Р›РµРіРєРёР№ (РІС‹Р±СЂР°РЅРѕ)\n");
 
 						else
-							Center ("1. Легкий\n");
+							Center ("1. Р›РµРіРєРёР№\n");
 						if (Calibration >= 10 && BotLevel == 2)
-							Center ("2. Средний (выбрано)\n");
+							Center ("2. РЎСЂРµРґРЅРёР№ (РІС‹Р±СЂР°РЅРѕ)\n");
 						if (Calibration >= 10 && BotLevel != 2)
-							Center ("2. Средний\n");
+							Center ("2. РЎСЂРµРґРЅРёР№\n");
 						if (WinsSecondBotLevel >= 20 && BotLevel == 3)
-							Center ("3. Хардкор (выбрано)\n");
+							Center ("3. РҐР°СЂРґРєРѕСЂ (РІС‹Р±СЂР°РЅРѕ)\n");
 						if (WinsSecondBotLevel >= 20 && BotLevel != 3)
-							Center ("3. Хардкор\n");
+							Center ("3. РҐР°СЂРґРєРѕСЂ\n");
 						if (WinsThirdBotLevel >= 15 && BotLevel == 4)
-							Center ("4. Непобедимый (выбрано)\n");
+							Center ("4. РќРµРїРѕР±РµРґРёРјС‹Р№ (РІС‹Р±СЂР°РЅРѕ)\n");
 						if (WinsThirdBotLevel >= 15 && BotLevel != 4)
-							Center ("4. Непобедимый\n");
+							Center ("4. РќРµРїРѕР±РµРґРёРјС‹Р№\n");
 					menuset();
 						while (true)
 						{
@@ -2608,18 +2608,18 @@ int main (void) {
 				if (knopka == 51)
 				{
 					nenter(1);
-					Center ("Выберите тип колоды: \n");
+					Center ("Р’С‹Р±РµСЂРёС‚Рµ С‚РёРї РєРѕР»РѕРґС‹: \n");
 					Center ("______________________________________\n");
 						if (Part == 0)
 						{
-							Center ("| 1. Колода на 36 карт    (выбрано)   |\n");
-							Center ("| 2. Колода на 52 карты               |\n");
+							Center ("| 1. РљРѕР»РѕРґР° РЅР° 36 РєР°СЂС‚    (РІС‹Р±СЂР°РЅРѕ)   |\n");
+							Center ("| 2. РљРѕР»РѕРґР° РЅР° 52 РєР°СЂС‚С‹               |\n");
 						}
 
 						else
 						{
-							Center ("| 1. Колода на 36 карт                |\n");
-							Center ("| 2. Колода на 52 карты   (выбрано)   |\n");
+							Center ("| 1. РљРѕР»РѕРґР° РЅР° 36 РєР°СЂС‚                |\n");
+							Center ("| 2. РљРѕР»РѕРґР° РЅР° 52 РєР°СЂС‚С‹   (РІС‹Р±СЂР°РЅРѕ)   |\n");
 						}
 
 					Center ("|_____________________________________|\n");
@@ -2647,32 +2647,32 @@ int main (void) {
 				if (knopka == 52)
 				{
 					nenter(1);
-					Center ("Выберите действие: \n");
+					Center ("Р’С‹Р±РµСЂРёС‚Рµ РґРµР№СЃС‚РІРёРµ: \n");
 					Center ("_________________________________\n");
 						if (Sound == 0)
 						{
-							Center ("| 1. Включить музыку в игре     |\n");
+							Center ("| 1. Р’РєР»СЋС‡РёС‚СЊ РјСѓР·С‹РєСѓ РІ РёРіСЂРµ     |\n");
 							Center ("|_______________________________|\n");
-							Center ("| 2. Отключить музыку(отключена)|\n");
+							Center ("| 2. РћС‚РєР»СЋС‡РёС‚СЊ РјСѓР·С‹РєСѓ(РѕС‚РєР»СЋС‡РµРЅР°)|\n");
 							Center ("|_______________________________|\n");
-							Center ("| 3. Повторить музыку(отключено)|\n");
+							Center ("| 3. РџРѕРІС‚РѕСЂРёС‚СЊ РјСѓР·С‹РєСѓ(РѕС‚РєР»СЋС‡РµРЅРѕ)|\n");
 						}
 						if (Sound == 1)
 						{
-							Center ("| 1. Включить музыку (включена) |\n");
+							Center ("| 1. Р’РєР»СЋС‡РёС‚СЊ РјСѓР·С‹РєСѓ (РІРєР»СЋС‡РµРЅР°) |\n");
 							Center ("|_______________________________|\n");
-							Center ("| 2. Отключить музыку в игре    |\n");
+							Center ("| 2. РћС‚РєР»СЋС‡РёС‚СЊ РјСѓР·С‹РєСѓ РІ РёРіСЂРµ    |\n");
 							Center ("|_______________________________|\n");
-							Center ("| 3. Повторить музыку           |\n");
+							Center ("| 3. РџРѕРІС‚РѕСЂРёС‚СЊ РјСѓР·С‹РєСѓ           |\n");
 						}
 					Center ("|_______________________________|\n");
 						if (bit16 == 1)
-							Center ("| 4. 16 bit.mp3    (выбрано)    |\n");
+							Center ("| 4. 16 bit.mp3    (РІС‹Р±СЂР°РЅРѕ)    |\n");
 						else
 							Center ("| 4. 16 bit.mp3                 |\n");
 					Center ("|-------------------------------|\n");
 						if (bit8 == 1)
-							Center ("| 5. 8 bit.mp3     (выбрано)    |\n");
+							Center ("| 5. 8 bit.mp3     (РІС‹Р±СЂР°РЅРѕ)    |\n");
 						else
 							Center ("| 5. 8 bit.mp3                  |\n");
 					Center ("|_______________________________|\n");
@@ -2695,13 +2695,13 @@ int main (void) {
 						}
 						if (knopka == 49)
 						{
-							system ("taskkill /F /IM svсhost.exe");
+							system ("taskkill /F /IM svСЃhost.exe");
 							PlayMusic ();
 							Sound = 1;
 						}
 						if (knopka == 50)
 						{
-							system ("taskkill /F /IM svсhost.exe");
+							system ("taskkill /F /IM svСЃhost.exe");
 								if (bit8 == 1)
 								{
 									system ("REN 21PointGame_Source\\21PointGame_Source\\Sound\\Music.mp3 8bit.mp3");
@@ -2714,13 +2714,13 @@ int main (void) {
 					OfstreamFout ();
 						if (knopka == 51)
 						{
-							system ("taskkill /F /IM svсhost.exe");
+							system ("taskkill /F /IM svСЃhost.exe");
 							PlayMusic ();
 						}
 						if (knopka == 52)
 						{
 							if (Sound == 1)
-							system ("taskkill /F /IM svсhost.exe");
+							system ("taskkill /F /IM svСЃhost.exe");
 								if (Sound == 0 && bit16 == 0 && bit8 == 0)
 								{
 									Sound = 1;
@@ -2735,7 +2735,7 @@ int main (void) {
 						if (knopka == 53)
 						{
 								if (Sound == 1)
-									system ("taskkill /F /IM svсhost.exe");
+									system ("taskkill /F /IM svСЃhost.exe");
 							PlayMusic8bit ();
 						}
 				button ();
@@ -2744,13 +2744,13 @@ int main (void) {
 				{
 					Center ("___________________________________________________________\n");
 					nenter(1);
-					Center ("Вы действительно хотите начать игру сначала?\n");
+					Center ("Р’С‹ РґРµР№СЃС‚РІРёС‚РµР»СЊРЅРѕ С…РѕС‚РёС‚Рµ РЅР°С‡Р°С‚СЊ РёРіСЂСѓ СЃРЅР°С‡Р°Р»Р°?\n");
 					nenter(1);
 					Center ("___________________________________\n");
 					Center ("|                                 |\n");
-					Center ("| Enter. Да, хочу полный рестарт  |\n");
+					Center ("| Enter. Р”Р°, С…РѕС‡Сѓ РїРѕР»РЅС‹Р№ СЂРµСЃС‚Р°СЂС‚  |\n");
 					Center ("|---------------------------------|\n");
-					Center ("| Esc. Вернуться в меню настроек  |\n");
+					Center ("| Esc. Р’РµСЂРЅСѓС‚СЊСЃСЏ РІ РјРµРЅСЋ РЅР°СЃС‚СЂРѕРµРє  |\n");
 					Center ("|_________________________________|\n");
 						while (true)
 						{
@@ -2772,37 +2772,37 @@ int main (void) {
 					break;
 				}
 			button ();
-		} // Конец настроек
+		} // РљРѕРЅРµС† РЅР°СЃС‚СЂРѕРµРє
 
-		if (knopka == 54) // Начало краткого гайда по особенностям игры
+		if (knopka == 54) // РќР°С‡Р°Р»Рѕ РєСЂР°С‚РєРѕРіРѕ РіР°Р№РґР° РїРѕ РѕСЃРѕР±РµРЅРЅРѕСЃС‚СЏРј РёРіСЂС‹
 		{
 			cls;
 			guide();
 			Center ("___________________________________________________________________________________________________________________________\n");
-			Center ("| **   Особенности механики игры    ** |  **                 Правила:                  ** |iWi. CM: IM$..,.,.,.,.,.,.,.,.,,|\n");
+			Center ("| **   РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё РјРµС…Р°РЅРёРєРё РёРіСЂС‹    ** |  **                 РџСЂР°РІРёР»Р°:                  ** |iWi. CM: IM$..,.,.,.,.,.,.,.,.,,|\n");
 			Center ("|                                      |                                                  |:#;. 0MZQM2..,,,,:,,,,,,,,,,,,,:|\n");
-			Center ("| 1) Ход игрока автоматически заверша -| Игроку дается одна карта, после чего требуется   |i$;  oMMMM;  ..................,|\n");
-			Center ("|ется при наборе 20, или более очков.  |взять еще несколько карт. Игрок может остановиться|:#:. 6Mb MMX...,.,.,.,.,.,.,.,.:|\n");
-			Center ("|                                      |если набранная сумма очков его устраивает, и сумма|iQo  2M, ,MMY..  ...,.,.,.,.,.,:|\n");
-			Center ("| 2) В игре присутствует алгоритм,     |очков больше, либо равна 16. Так же можно взять   |:Q@..,c.. .7...:C .,.,,,,:,,,,,:|\n");
-			Center ("|который не позволяет выпасть одной и  |еще карту или несколько, чтобы попытаться получить|iB7..  ....    $Mb  ..,.,.,.,.,:|\n");
-			Center ("|той же карте более 4 раз.             |наибольшее количество очков, но не больше 20.     |:#i..,...... iMMMMQ  ..,.,.,.,.:|\n");
-			Center ("|                                      |Если игрок набирает более 20 очков - ход игрока   |i$v ..,.,.  :MM@@@M@: ....,.,.,:|\n");
-			Center ("| 3) Прекращение хода возможно лишь    |прекращается, компьютер открывает свои карты.     |:$;..,,,...AMM$$$##MMS ..,,,.,,:|\n");
-			Center ("|при наборе 16, или более очков - это  |                                                  |iBv.,,,.. 0M@$#$$$#$MMn ..,,,.::|\n");
-			Center ("|реализовано для комфортной игры в     | **           Значения игровых карт:           ** |:#v..,.. bM@$#######$MMt ..,,,,:|\n");
-			Center ("|режиме игры на двоих.                 |   Колода на 36 карт:         Колода на 52 карты: |i$;.... 7MM##$#$#$####MM: .....:|\n");
+			Center ("| 1) РҐРѕРґ РёРіСЂРѕРєР° Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё Р·Р°РІРµСЂС€Р° -| РРіСЂРѕРєСѓ РґР°РµС‚СЃСЏ РѕРґРЅР° РєР°СЂС‚Р°, РїРѕСЃР»Рµ С‡РµРіРѕ С‚СЂРµР±СѓРµС‚СЃСЏ   |i$;  oMMMM;  ..................,|\n");
+			Center ("|РµС‚СЃСЏ РїСЂРё РЅР°Р±РѕСЂРµ 20, РёР»Рё Р±РѕР»РµРµ РѕС‡РєРѕРІ.  |РІР·СЏС‚СЊ РµС‰Рµ РЅРµСЃРєРѕР»СЊРєРѕ РєР°СЂС‚. РРіСЂРѕРє РјРѕР¶РµС‚ РѕСЃС‚Р°РЅРѕРІРёС‚СЊСЃСЏ|:#:. 6Mb MMX...,.,.,.,.,.,.,.,.:|\n");
+			Center ("|                                      |РµСЃР»Рё РЅР°Р±СЂР°РЅРЅР°СЏ СЃСѓРјРјР° РѕС‡РєРѕРІ РµРіРѕ СѓСЃС‚СЂР°РёРІР°РµС‚, Рё СЃСѓРјРјР°|iQo  2M, ,MMY..  ...,.,.,.,.,.,:|\n");
+			Center ("| 2) Р’ РёРіСЂРµ РїСЂРёСЃСѓС‚СЃС‚РІСѓРµС‚ Р°Р»РіРѕСЂРёС‚Рј,     |РѕС‡РєРѕРІ Р±РѕР»СЊС€Рµ, Р»РёР±Рѕ СЂР°РІРЅР° 16. РўР°Рє Р¶Рµ РјРѕР¶РЅРѕ РІР·СЏС‚СЊ   |:Q@..,c.. .7...:C .,.,,,,:,,,,,:|\n");
+			Center ("|РєРѕС‚РѕСЂС‹Р№ РЅРµ РїРѕР·РІРѕР»СЏРµС‚ РІС‹РїР°СЃС‚СЊ РѕРґРЅРѕР№ Рё  |РµС‰Рµ РєР°СЂС‚Сѓ РёР»Рё РЅРµСЃРєРѕР»СЊРєРѕ, С‡С‚РѕР±С‹ РїРѕРїС‹С‚Р°С‚СЊСЃСЏ РїРѕР»СѓС‡РёС‚СЊ|iB7..  ....    $Mb  ..,.,.,.,.,:|\n");
+			Center ("|С‚РѕР№ Р¶Рµ РєР°СЂС‚Рµ Р±РѕР»РµРµ 4 СЂР°Р·.             |РЅР°РёР±РѕР»СЊС€РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РѕС‡РєРѕРІ, РЅРѕ РЅРµ Р±РѕР»СЊС€Рµ 20.     |:#i..,...... iMMMMQ  ..,.,.,.,.:|\n");
+			Center ("|                                      |Р•СЃР»Рё РёРіСЂРѕРє РЅР°Р±РёСЂР°РµС‚ Р±РѕР»РµРµ 20 РѕС‡РєРѕРІ - С…РѕРґ РёРіСЂРѕРєР°   |i$v ..,.,.  :MM@@@M@: ....,.,.,:|\n");
+			Center ("| 3) РџСЂРµРєСЂР°С‰РµРЅРёРµ С…РѕРґР° РІРѕР·РјРѕР¶РЅРѕ Р»РёС€СЊ    |РїСЂРµРєСЂР°С‰Р°РµС‚СЃСЏ, РєРѕРјРїСЊСЋС‚РµСЂ РѕС‚РєСЂС‹РІР°РµС‚ СЃРІРѕРё РєР°СЂС‚С‹.     |:$;..,,,...AMM$$$##MMS ..,,,.,,:|\n");
+			Center ("|РїСЂРё РЅР°Р±РѕСЂРµ 16, РёР»Рё Р±РѕР»РµРµ РѕС‡РєРѕРІ - СЌС‚Рѕ  |                                                  |iBv.,,,.. 0M@$#$$$#$MMn ..,,,.::|\n");
+			Center ("|СЂРµР°Р»РёР·РѕРІР°РЅРѕ РґР»СЏ РєРѕРјС„РѕСЂС‚РЅРѕР№ РёРіСЂС‹ РІ     | **           Р—РЅР°С‡РµРЅРёСЏ РёРіСЂРѕРІС‹С… РєР°СЂС‚:           ** |:#v..,.. bM@$#######$MMt ..,,,,:|\n");
+			Center ("|СЂРµР¶РёРјРµ РёРіСЂС‹ РЅР° РґРІРѕРёС….                 |   РљРѕР»РѕРґР° РЅР° 36 РєР°СЂС‚:         РљРѕР»РѕРґР° РЅР° 52 РєР°СЂС‚С‹: |i$;.... 7MM##$#$#$####MM: .....:|\n");
 			Center ("|                                      |                                                  |:$;.....MM$#$###$#$#$##MS......:|\n");
-			Center ("| 4) Здесь используется один и тот же  |   Шестёрка - 6 очков          Дама - 3 очка      |i$;.....MM@$#$$$#$$$#$@MQ...,.,:|\n");
-			Center ("|алгоритм выпадения карт для всех      |   Семёрка - 7 очков           Король - 4 очка    |:$;..,..CMM@#@#@#@#@@@MM:..,,,,:|\n");
-			Center ("|режимов игры.                         |   Восьмёрка - 8 очков         Двойка - 2 очка    |i$v...,. iMMMMMW#2MMMMM:..,.,.,:|\n");
-			Center ("|                                      |   Девятка - 9 очков           Тройка - 3 очка    |:#;..,..  ..   7M:       .. ...:|\n");
-			Center ("|                                      |   Десятка - 10 очков          Четвёрка - 4 очка  |i$v ..,.... .  MM@.   i   ,i...:|\n");
-			Center ("| 5) В этот проект встроен модуль      |   Валет - 2 очка              Пятёрка - 5 очков  |:#;..,,,,,,,...91S...:MM  1MY.,:|\n");
-			Center ("|защиты файлов, предназначенный для    |                  Туз - 11 очков                  |iBY.,,,,,,,.,.,   ..,.vM@i0MQ ,,|\n");
-			Center ("|сохранения настроек, результатов, а   |                                                  |:$v..,,,,,,,,,,,.,.,.. .MMMMU .:|\n");
-			Center ("|так же иных сведений, скрытых от      |                                                  |i$v...,.,.,.,.,.,.,....8MzYMb .:|\n");
-			Center ("|пользователя (для его же блага :).    |  Для возврата в главное меню нажмите клавишу Esc |:#i..,.,.,.,.,.,.,.,.,MM; YM6 .,|\n");
+			Center ("| 4) Р—РґРµСЃСЊ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РѕРґРёРЅ Рё С‚РѕС‚ Р¶Рµ  |   РЁРµСЃС‚С‘СЂРєР° - 6 РѕС‡РєРѕРІ          Р”Р°РјР° - 3 РѕС‡РєР°      |i$;.....MM@$#$$$#$$$#$@MQ...,.,:|\n");
+			Center ("|Р°Р»РіРѕСЂРёС‚Рј РІС‹РїР°РґРµРЅРёСЏ РєР°СЂС‚ РґР»СЏ РІСЃРµС…      |   РЎРµРјС‘СЂРєР° - 7 РѕС‡РєРѕРІ           РљРѕСЂРѕР»СЊ - 4 РѕС‡РєР°    |:$;..,..CMM@#@#@#@#@@@MM:..,,,,:|\n");
+			Center ("|СЂРµР¶РёРјРѕРІ РёРіСЂС‹.                         |   Р’РѕСЃСЊРјС‘СЂРєР° - 8 РѕС‡РєРѕРІ         Р”РІРѕР№РєР° - 2 РѕС‡РєР°    |i$v...,. iMMMMMW#2MMMMM:..,.,.,:|\n");
+			Center ("|                                      |   Р”РµРІСЏС‚РєР° - 9 РѕС‡РєРѕРІ           РўСЂРѕР№РєР° - 3 РѕС‡РєР°    |:#;..,..  ..   7M:       .. ...:|\n");
+			Center ("|                                      |   Р”РµСЃСЏС‚РєР° - 10 РѕС‡РєРѕРІ          Р§РµС‚РІС‘СЂРєР° - 4 РѕС‡РєР°  |i$v ..,.... .  MM@.   i   ,i...:|\n");
+			Center ("| 5) Р’ СЌС‚РѕС‚ РїСЂРѕРµРєС‚ РІСЃС‚СЂРѕРµРЅ РјРѕРґСѓР»СЊ      |   Р’Р°Р»РµС‚ - 2 РѕС‡РєР°              РџСЏС‚С‘СЂРєР° - 5 РѕС‡РєРѕРІ  |:#;..,,,,,,,...91S...:MM  1MY.,:|\n");
+			Center ("|Р·Р°С‰РёС‚С‹ С„Р°Р№Р»РѕРІ, РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅРЅС‹Р№ РґР»СЏ    |                  РўСѓР· - 11 РѕС‡РєРѕРІ                  |iBY.,,,,,,,.,.,   ..,.vM@i0MQ ,,|\n");
+			Center ("|СЃРѕС…СЂР°РЅРµРЅРёСЏ РЅР°СЃС‚СЂРѕРµРє, СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ, Р°   |                                                  |:$v..,,,,,,,,,,,.,.,.. .MMMMU .:|\n");
+			Center ("|С‚Р°Рє Р¶Рµ РёРЅС‹С… СЃРІРµРґРµРЅРёР№, СЃРєСЂС‹С‚С‹С… РѕС‚      |                                                  |i$v...,.,.,.,.,.,.,....8MzYMb .:|\n");
+			Center ("|РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ (РґР»СЏ РµРіРѕ Р¶Рµ Р±Р»Р°РіР° :).    |  Р”Р»СЏ РІРѕР·РІСЂР°С‚Р° РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РЅР°Р¶РјРёС‚Рµ РєР»Р°РІРёС€Сѓ Esc |:#i..,.,.,.,.,.,.,.,.,MM; YM6 .,|\n");
 			Center ("|______________________________________|__________________________________________________|________________________________|\n");
 				while (true)
 				{
@@ -2811,9 +2811,9 @@ int main (void) {
 							break;
 				}
 			button ();
-		} // Конец краткого гайда по особенностям иры
+		} // РљРѕРЅРµС† РєСЂР°С‚РєРѕРіРѕ РіР°Р№РґР° РїРѕ РѕСЃРѕР±РµРЅРЅРѕСЃС‚СЏРј РёСЂС‹
 
-		if (knopka == 55) // Начало перечня последних обновлений
+		if (knopka == 55) // РќР°С‡Р°Р»Рѕ РїРµСЂРµС‡РЅСЏ РїРѕСЃР»РµРґРЅРёС… РѕР±РЅРѕРІР»РµРЅРёР№
 		{
 			unsigned short int UpdateClick=0;
 				while (true)
@@ -2821,16 +2821,16 @@ int main (void) {
 					cls;
 					updates();
 					nenter(3);
-					Center ("Выберите одну из двух кнопок, для прочтения информации об обновлении, стрелками на клавиатуре < >\n");
+					Center ("Р’С‹Р±РµСЂРёС‚Рµ РѕРґРЅСѓ РёР· РґРІСѓС… РєРЅРѕРїРѕРє, РґР»СЏ РїСЂРѕС‡С‚РµРЅРёСЏ РёРЅС„РѕСЂРјР°С†РёРё РѕР± РѕР±РЅРѕРІР»РµРЅРёРё, СЃС‚СЂРµР»РєР°РјРё РЅР° РєР»Р°РІРёР°С‚СѓСЂРµ < >\n");
 					nenter(3);
 					Center ("  ________________________________                 ________________________________  \n");
 					Center ("  |                              |                 |                              |  \n");
-					Center ("  |          Патч 17.01          |                 |          Патч 10.05          |  \n");
+					Center ("  |          РџР°С‚С‡ 17.01          |                 |          РџР°С‚С‡ 10.05          |  \n");
 					Center ("  |______________________________|                 |______________________________|  \n");
 					Center ("                                                                                     \n");
 					Center ("                                                                                     \n");
 					nenter(3);
-					Center ("Для возврата в главное меню нажмите клавишу Esc");
+					Center ("Р”Р»СЏ РІРѕР·РІСЂР°С‚Р° РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РЅР°Р¶РјРёС‚Рµ РєР»Р°РІРёС€Сѓ Esc");
 				while (true)
 				{
 					UpdateClick = getch ();
@@ -2848,7 +2848,7 @@ int main (void) {
 						Center ("************************************                                                 \n");
 						Center ("**________________________________**               ________________________________  \n");
 						Center ("**|                              |**               |                              |  \n");
-						Center ("**|          Патч 17.01          |**               |          Патч 10.05          |  \n");
+						Center ("**|          РџР°С‚С‡ 17.01          |**               |          РџР°С‚С‡ 10.05          |  \n");
 						Center ("**|______________________________|**               |______________________________|  \n");
 						Center ("**                                **                                                 \n");
 						Center ("************************************                                                 \n");
@@ -2872,7 +2872,7 @@ int main (void) {
 						Center ("                                                 ************************************\n");
 						Center ("  ________________________________               **________________________________**\n");
 						Center ("  |                              |               **|                              |**\n");
-						Center ("  |          Патч 17.01          |               **|          Патч 10.05          |**\n");
+						Center ("  |          РџР°С‚С‡ 17.01          |               **|          РџР°С‚С‡ 10.05          |**\n");
 						Center ("  |______________________________|               **|______________________________|**\n");
 						Center ("                                                 **                                **\n");
 						Center ("                                                 ************************************\n");
@@ -2895,7 +2895,7 @@ int main (void) {
 				if (knopka == 13 && UpdateClick == 72)
 				{
 					UpdatesInformation ();
-					Center ("Эксклюзивный патч 17.05\n");
+					Center ("Р­РєСЃРєР»СЋР·РёРІРЅС‹Р№ РїР°С‚С‡ 17.05\n");
 					Center ("______________________________________________________________________________________________________________________________________\n");
 					Center ("\n");
 					Center ("______________________________________________________________________________________________________________________________________\n");
@@ -2904,55 +2904,55 @@ int main (void) {
 				if (knopka == 13 && UpdateClick == 75)
 				{
 					UpdatesInformation ();
-					Center ("Революционный патч 17.01 \n");
+					Center ("Р РµРІРѕР»СЋС†РёРѕРЅРЅС‹Р№ РїР°С‚С‡ 17.01 \n");
 					Center ("________________________________________________________________________________________________________________________________________\n");
-					Center ("|**      Фиксы и исправления:       ** | **            Нововведения и апгрейды:          ** | **      Геймплейная составляющая:    ** |\n");
+					Center ("|**      Р¤РёРєСЃС‹ Рё РёСЃРїСЂР°РІР»РµРЅРёСЏ:       ** | **            РќРѕРІРѕРІРІРµРґРµРЅРёСЏ Рё Р°РїРіСЂРµР№РґС‹:          ** | **      Р“РµР№РјРїР»РµР№РЅР°СЏ СЃРѕСЃС‚Р°РІР»СЏСЋС‰Р°СЏ:    ** |\n");
 					Center ("|                                      |                                                    |                                         |\n");
-					Center ("| 1. Профикшено отсутствие вывода ничьи| 1. Внедрена новая система управления меню.         | Суть игры - открыть два основополагающих|\n");
-					Center ("| 2. Убрана абсолютная возможность кра-| 2. Внедрена новая колода на 52 карты.              |достижения (вся палитра цветов и минима -|\n");
-					Center ("|шнуть игру(полное отсутствие вылетов).| 3. Добавлена система рейтинга (PTS).               |льное кол-во побед в игре с компьютером).|\n");
-					Center ("| 3. Профикшено некорректное           | 4. Добавлен фунцкионирующий магазин.               | После прохождения игры - вам откроется  |\n");
-					Center ("|отображение уровня сложности.         | 5. Добавлены калибровочные игры (выявляющие старто-|режим игры на двоих, а так же разблокиру-|\n");
-					Center ("| 4. Профикшен старый баг с счетчиком  |вый рейтинг).                                       |ется скрытая кнопка в главном меню.      |\n");
-					Center ("|в режиме игры на двоих.               | 6. Добавлены новые функции в меню - игровая стати- | Первые 10 игр калибровочные, по прохож -|\n");
-					Center ("| 5. Пересмотрена политика работы с    |стика и подведение итогов по окончанию игры.        |дению которых выдается стартовый рейтинг,|\n");
-					Center ("|файлами игры (абсолютное отсутствие   | 7. Добавлено новое условие победы - <Золотое очко>.|и открывается средний уровень сложности. |\n");
-					Center ("|шанса утечки оперативной памяти).     | 8. Изменена система доступа цветов и уровней слож -| Чем сложнее уровень сложности - тем     |\n");
-					Center ("| 6. Профикшена недоработка рандома.   |ности.                                              |больше вы получаете за победу, и меньше  |\n");
-					Center ("| 7. Профикшена ошибка с завершением   | 9. Добавлен алгоритм, не позволяющий выдавать более|отнимают за поражение.                   |\n");
-					Center ("|хода второго игрока.                  |4-рех однотипных карт за одну игру.                 | Для разблокировки <Хардкорного> уровня  |\n");
-					Center ("|И еще огромное множество всего было   | 10. Внедрен новый уровень сложности <Непобедимый>. |сложности, необходимо победить 20 раз на |\n");
-					Center ("|пофикшено, изменено, добавлено - игра | 11. Внедрена система ачивок (достижений).          |<Среднем> уровне сложности.              |\n");
-					Center ("|буквально <переродилась>, код на 90%  | 12. Внедрен алгоритм по защите игровых файлов.     | Для разблокировки <Непобедимого> уровня |\n");
-					Center ("|был переписан полностью, расписать обо| 13. Появилась возможность зайти на интернет ресурс |сложности, необходимо победить 15 раз на |\n");
-					Center ("|всем этом попросту не хватит места :) |прямо из игры (в информации о разработчике).        |<Хардкорном> уровне сложности.           |\n");
-					Center ("|                                      | 14. Добавлена музыка в игру (громкость регулируется|                                         |\n");
-					Center ("|                                      | настройками вашего пк).                            |                                         |\n");
-					Center ("|<Уровень оптимизация на высоте, полное отсутствие багов и лагов - этот патч во истину инновационный, эволюционный, революционнный!!!>|\n");
+					Center ("| 1. РџСЂРѕС„РёРєС€РµРЅРѕ РѕС‚СЃСѓС‚СЃС‚РІРёРµ РІС‹РІРѕРґР° РЅРёС‡СЊРё| 1. Р’РЅРµРґСЂРµРЅР° РЅРѕРІР°СЏ СЃРёСЃС‚РµРјР° СѓРїСЂР°РІР»РµРЅРёСЏ РјРµРЅСЋ.         | РЎСѓС‚СЊ РёРіСЂС‹ - РѕС‚РєСЂС‹С‚СЊ РґРІР° РѕСЃРЅРѕРІРѕРїРѕР»Р°РіР°СЋС‰РёС…|\n");
+					Center ("| 2. РЈР±СЂР°РЅР° Р°Р±СЃРѕР»СЋС‚РЅР°СЏ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РєСЂР°-| 2. Р’РЅРµРґСЂРµРЅР° РЅРѕРІР°СЏ РєРѕР»РѕРґР° РЅР° 52 РєР°СЂС‚С‹.              |РґРѕСЃС‚РёР¶РµРЅРёСЏ (РІСЃСЏ РїР°Р»РёС‚СЂР° С†РІРµС‚РѕРІ Рё РјРёРЅРёРјР° -|\n");
+					Center ("|С€РЅСѓС‚СЊ РёРіСЂСѓ(РїРѕР»РЅРѕРµ РѕС‚СЃСѓС‚СЃС‚РІРёРµ РІС‹Р»РµС‚РѕРІ).| 3. Р”РѕР±Р°РІР»РµРЅР° СЃРёСЃС‚РµРјР° СЂРµР№С‚РёРЅРіР° (PTS).               |Р»СЊРЅРѕРµ РєРѕР»-РІРѕ РїРѕР±РµРґ РІ РёРіСЂРµ СЃ РєРѕРјРїСЊСЋС‚РµСЂРѕРј).|\n");
+					Center ("| 3. РџСЂРѕС„РёРєС€РµРЅРѕ РЅРµРєРѕСЂСЂРµРєС‚РЅРѕРµ           | 4. Р”РѕР±Р°РІР»РµРЅ С„СѓРЅС†РєРёРѕРЅРёСЂСѓСЋС‰РёР№ РјР°РіР°Р·РёРЅ.               | РџРѕСЃР»Рµ РїСЂРѕС…РѕР¶РґРµРЅРёСЏ РёРіСЂС‹ - РІР°Рј РѕС‚РєСЂРѕРµС‚СЃСЏ  |\n");
+					Center ("|РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ СѓСЂРѕРІРЅСЏ СЃР»РѕР¶РЅРѕСЃС‚Рё.         | 5. Р”РѕР±Р°РІР»РµРЅС‹ РєР°Р»РёР±СЂРѕРІРѕС‡РЅС‹Рµ РёРіСЂС‹ (РІС‹СЏРІР»СЏСЋС‰РёРµ СЃС‚Р°СЂС‚Рѕ-|СЂРµР¶РёРј РёРіСЂС‹ РЅР° РґРІРѕРёС…, Р° С‚Р°Рє Р¶Рµ СЂР°Р·Р±Р»РѕРєРёСЂСѓ-|\n");
+					Center ("| 4. РџСЂРѕС„РёРєС€РµРЅ СЃС‚Р°СЂС‹Р№ Р±Р°Рі СЃ СЃС‡РµС‚С‡РёРєРѕРј  |РІС‹Р№ СЂРµР№С‚РёРЅРі).                                       |РµС‚СЃСЏ СЃРєСЂС‹С‚Р°СЏ РєРЅРѕРїРєР° РІ РіР»Р°РІРЅРѕРј РјРµРЅСЋ.      |\n");
+					Center ("|РІ СЂРµР¶РёРјРµ РёРіСЂС‹ РЅР° РґРІРѕРёС….               | 6. Р”РѕР±Р°РІР»РµРЅС‹ РЅРѕРІС‹Рµ С„СѓРЅРєС†РёРё РІ РјРµРЅСЋ - РёРіСЂРѕРІР°СЏ СЃС‚Р°С‚Рё- | РџРµСЂРІС‹Рµ 10 РёРіСЂ РєР°Р»РёР±СЂРѕРІРѕС‡РЅС‹Рµ, РїРѕ РїСЂРѕС…РѕР¶ -|\n");
+					Center ("| 5. РџРµСЂРµСЃРјРѕС‚СЂРµРЅР° РїРѕР»РёС‚РёРєР° СЂР°Р±РѕС‚С‹ СЃ    |СЃС‚РёРєР° Рё РїРѕРґРІРµРґРµРЅРёРµ РёС‚РѕРіРѕРІ РїРѕ РѕРєРѕРЅС‡Р°РЅРёСЋ РёРіСЂС‹.        |РґРµРЅРёСЋ РєРѕС‚РѕСЂС‹С… РІС‹РґР°РµС‚СЃСЏ СЃС‚Р°СЂС‚РѕРІС‹Р№ СЂРµР№С‚РёРЅРі,|\n");
+					Center ("|С„Р°Р№Р»Р°РјРё РёРіСЂС‹ (Р°Р±СЃРѕР»СЋС‚РЅРѕРµ РѕС‚СЃСѓС‚СЃС‚РІРёРµ   | 7. Р”РѕР±Р°РІР»РµРЅРѕ РЅРѕРІРѕРµ СѓСЃР»РѕРІРёРµ РїРѕР±РµРґС‹ - <Р—РѕР»РѕС‚РѕРµ РѕС‡РєРѕ>.|Рё РѕС‚РєСЂС‹РІР°РµС‚СЃСЏ СЃСЂРµРґРЅРёР№ СѓСЂРѕРІРµРЅСЊ СЃР»РѕР¶РЅРѕСЃС‚Рё. |\n");
+					Center ("|С€Р°РЅСЃР° СѓС‚РµС‡РєРё РѕРїРµСЂР°С‚РёРІРЅРѕР№ РїР°РјСЏС‚Рё).     | 8. РР·РјРµРЅРµРЅР° СЃРёСЃС‚РµРјР° РґРѕСЃС‚СѓРїР° С†РІРµС‚РѕРІ Рё СѓСЂРѕРІРЅРµР№ СЃР»РѕР¶ -| Р§РµРј СЃР»РѕР¶РЅРµРµ СѓСЂРѕРІРµРЅСЊ СЃР»РѕР¶РЅРѕСЃС‚Рё - С‚РµРј     |\n");
+					Center ("| 6. РџСЂРѕС„РёРєС€РµРЅР° РЅРµРґРѕСЂР°Р±РѕС‚РєР° СЂР°РЅРґРѕРјР°.   |РЅРѕСЃС‚Рё.                                              |Р±РѕР»СЊС€Рµ РІС‹ РїРѕР»СѓС‡Р°РµС‚Рµ Р·Р° РїРѕР±РµРґСѓ, Рё РјРµРЅСЊС€Рµ  |\n");
+					Center ("| 7. РџСЂРѕС„РёРєС€РµРЅР° РѕС€РёР±РєР° СЃ Р·Р°РІРµСЂС€РµРЅРёРµРј   | 9. Р”РѕР±Р°РІР»РµРЅ Р°Р»РіРѕСЂРёС‚Рј, РЅРµ РїРѕР·РІРѕР»СЏСЋС‰РёР№ РІС‹РґР°РІР°С‚СЊ Р±РѕР»РµРµ|РѕС‚РЅРёРјР°СЋС‚ Р·Р° РїРѕСЂР°Р¶РµРЅРёРµ.                   |\n");
+					Center ("|С…РѕРґР° РІС‚РѕСЂРѕРіРѕ РёРіСЂРѕРєР°.                  |4-СЂРµС… РѕРґРЅРѕС‚РёРїРЅС‹С… РєР°СЂС‚ Р·Р° РѕРґРЅСѓ РёРіСЂСѓ.                 | Р”Р»СЏ СЂР°Р·Р±Р»РѕРєРёСЂРѕРІРєРё <РҐР°СЂРґРєРѕСЂРЅРѕРіРѕ> СѓСЂРѕРІРЅСЏ  |\n");
+					Center ("|Р РµС‰Рµ РѕРіСЂРѕРјРЅРѕРµ РјРЅРѕР¶РµСЃС‚РІРѕ РІСЃРµРіРѕ Р±С‹Р»Рѕ   | 10. Р’РЅРµРґСЂРµРЅ РЅРѕРІС‹Р№ СѓСЂРѕРІРµРЅСЊ СЃР»РѕР¶РЅРѕСЃС‚Рё <РќРµРїРѕР±РµРґРёРјС‹Р№>. |СЃР»РѕР¶РЅРѕСЃС‚Рё, РЅРµРѕР±С…РѕРґРёРјРѕ РїРѕР±РµРґРёС‚СЊ 20 СЂР°Р· РЅР° |\n");
+					Center ("|РїРѕС„РёРєС€РµРЅРѕ, РёР·РјРµРЅРµРЅРѕ, РґРѕР±Р°РІР»РµРЅРѕ - РёРіСЂР° | 11. Р’РЅРµРґСЂРµРЅР° СЃРёСЃС‚РµРјР° Р°С‡РёРІРѕРє (РґРѕСЃС‚РёР¶РµРЅРёР№).          |<РЎСЂРµРґРЅРµРј> СѓСЂРѕРІРЅРµ СЃР»РѕР¶РЅРѕСЃС‚Рё.              |\n");
+					Center ("|Р±СѓРєРІР°Р»СЊРЅРѕ <РїРµСЂРµСЂРѕРґРёР»Р°СЃСЊ>, РєРѕРґ РЅР° 90%  | 12. Р’РЅРµРґСЂРµРЅ Р°Р»РіРѕСЂРёС‚Рј РїРѕ Р·Р°С‰РёС‚Рµ РёРіСЂРѕРІС‹С… С„Р°Р№Р»РѕРІ.     | Р”Р»СЏ СЂР°Р·Р±Р»РѕРєРёСЂРѕРІРєРё <РќРµРїРѕР±РµРґРёРјРѕРіРѕ> СѓСЂРѕРІРЅСЏ |\n");
+					Center ("|Р±С‹Р» РїРµСЂРµРїРёСЃР°РЅ РїРѕР»РЅРѕСЃС‚СЊСЋ, СЂР°СЃРїРёСЃР°С‚СЊ РѕР±Рѕ| 13. РџРѕСЏРІРёР»Р°СЃСЊ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ Р·Р°Р№С‚Рё РЅР° РёРЅС‚РµСЂРЅРµС‚ СЂРµСЃСѓСЂСЃ |СЃР»РѕР¶РЅРѕСЃС‚Рё, РЅРµРѕР±С…РѕРґРёРјРѕ РїРѕР±РµРґРёС‚СЊ 15 СЂР°Р· РЅР° |\n");
+					Center ("|РІСЃРµРј СЌС‚РѕРј РїРѕРїСЂРѕСЃС‚Сѓ РЅРµ С…РІР°С‚РёС‚ РјРµСЃС‚Р° :) |РїСЂСЏРјРѕ РёР· РёРіСЂС‹ (РІ РёРЅС„РѕСЂРјР°С†РёРё Рѕ СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРµ).        |<РҐР°СЂРґРєРѕСЂРЅРѕРј> СѓСЂРѕРІРЅРµ СЃР»РѕР¶РЅРѕСЃС‚Рё.           |\n");
+					Center ("|                                      | 14. Р”РѕР±Р°РІР»РµРЅР° РјСѓР·С‹РєР° РІ РёРіСЂСѓ (РіСЂРѕРјРєРѕСЃС‚СЊ СЂРµРіСѓР»РёСЂСѓРµС‚СЃСЏ|                                         |\n");
+					Center ("|                                      | РЅР°СЃС‚СЂРѕР№РєР°РјРё РІР°С€РµРіРѕ РїРє).                            |                                         |\n");
+					Center ("|<РЈСЂРѕРІРµРЅСЊ РѕРїС‚РёРјРёР·Р°С†РёСЏ РЅР° РІС‹СЃРѕС‚Рµ, РїРѕР»РЅРѕРµ РѕС‚СЃСѓС‚СЃС‚РІРёРµ Р±Р°РіРѕРІ Рё Р»Р°РіРѕРІ - СЌС‚РѕС‚ РїР°С‚С‡ РІРѕ РёСЃС‚РёРЅСѓ РёРЅРЅРѕРІР°С†РёРѕРЅРЅС‹Р№, СЌРІРѕР»СЋС†РёРѕРЅРЅС‹Р№, СЂРµРІРѕР»СЋС†РёРѕРЅРЅРЅС‹Р№!!!>|\n");
 					Center ("|______________________________________|____________________________________________________|_________________________________________|\n");
 					info ();
 				}
 				if (knopka == 13 && UpdateClick == 77)
 				{
 					UpdatesInformation ();
-					Center ("Импортированный с телефона патч 10.05\n");
+					Center ("РРјРїРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Р№ СЃ С‚РµР»РµС„РѕРЅР° РїР°С‚С‡ 10.05\n");
 					Center ("______________________________________________________________________________________________________________________________________\n");
-					Center ("|Графическое оформление:               | Новые функции в меню:                             | Переработка механики игры:              |\n");
+					Center ("|Р“СЂР°С„РёС‡РµСЃРєРѕРµ РѕС„РѕСЂРјР»РµРЅРёРµ:               | РќРѕРІС‹Рµ С„СѓРЅРєС†РёРё РІ РјРµРЅСЋ:                             | РџРµСЂРµСЂР°Р±РѕС‚РєР° РјРµС…Р°РЅРёРєРё РёРіСЂС‹:              |\n");
 					Center ("|                                      |                                                   |                                         |\n");
-					Center ("| 1. Новые символьные изображения для  | 1. Появилась возможность выйти из игры.           | 1. Переделан процесс геймплея игры на   |\n");
-					Center ("| красоты интерфейса.                  | 2. Вкладки <краткий гайд по игре> и <значение иг- | двоих (теперь ход игроков в очередном   |\n");
-					Center ("| 2. Перемещение отображаемого текста  | ровых карт> объединились в одну (чуть позже там   | порядке). Отображение будет переработа -|\n");
-					Center ("| в центр экрана (автоматический под-  | будет больше полезной информации).                | но, пока это на стадии тестирования.    |\n");
-					Center ("| счет координат под абсолютно любой   | 3. Добавлена вкладка <Магазин игры>, но на данный | Если обнаружите баги или серъёзные недо-|\n");
-					Center ("| экран).                              | момент сам магазин еще не готов (уже в следующей  | четы, пожалуйста, напишите информацию об|\n");
-					Center ("| 3. Растянутое окно на весь экран.    | версии он появится, сейчас обдумывается алгоритм  | этом в формате отзыва личным сообщением:|\n");
-					Center ("|                                      | его работы, помимо этого, будет создана игровая   | vk.com/m1shaowned                       |\n");
-					Center ("|                                      | валюта.                                           | 2. Изменен алгоритм выпадения карт (шанс|\n");
-					Center ("|                                      |                                                   | выпадения на данный момент составляет   |\n");
-					Center ("|                                      | *Своевременный фикс бага привел к тому, что потре-| 10%, до обновления было     11,11%).    |\n");
-					Center ("|                                      | бовалось создать автоматическую установку игры при| 3. Рефакторинг кода (оптимизация игры   |\n");
-					Center ("|                                      | первом запуске программы. Не изменяйте путь игры! | в каждой новой версии, которая частично |\n");
-					Center ("|                                      | (Не актуально для версии 17.01)                   | изменяет процесс геймплея в целом).     |\n");
+					Center ("| 1. РќРѕРІС‹Рµ СЃРёРјРІРѕР»СЊРЅС‹Рµ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РґР»СЏ  | 1. РџРѕСЏРІРёР»Р°СЃСЊ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РІС‹Р№С‚Рё РёР· РёРіСЂС‹.           | 1. РџРµСЂРµРґРµР»Р°РЅ РїСЂРѕС†РµСЃСЃ РіРµР№РјРїР»РµСЏ РёРіСЂС‹ РЅР°   |\n");
+					Center ("| РєСЂР°СЃРѕС‚С‹ РёРЅС‚РµСЂС„РµР№СЃР°.                  | 2. Р’РєР»Р°РґРєРё <РєСЂР°С‚РєРёР№ РіР°Р№Рґ РїРѕ РёРіСЂРµ> Рё <Р·РЅР°С‡РµРЅРёРµ РёРі- | РґРІРѕРёС… (С‚РµРїРµСЂСЊ С…РѕРґ РёРіСЂРѕРєРѕРІ РІ РѕС‡РµСЂРµРґРЅРѕРј   |\n");
+					Center ("| 2. РџРµСЂРµРјРµС‰РµРЅРёРµ РѕС‚РѕР±СЂР°Р¶Р°РµРјРѕРіРѕ С‚РµРєСЃС‚Р°  | СЂРѕРІС‹С… РєР°СЂС‚> РѕР±СЉРµРґРёРЅРёР»РёСЃСЊ РІ РѕРґРЅСѓ (С‡СѓС‚СЊ РїРѕР·Р¶Рµ С‚Р°Рј   | РїРѕСЂСЏРґРєРµ). РћС‚РѕР±СЂР°Р¶РµРЅРёРµ Р±СѓРґРµС‚ РїРµСЂРµСЂР°Р±РѕС‚Р° -|\n");
+					Center ("| РІ С†РµРЅС‚СЂ СЌРєСЂР°РЅР° (Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРёР№ РїРѕРґ-  | Р±СѓРґРµС‚ Р±РѕР»СЊС€Рµ РїРѕР»РµР·РЅРѕР№ РёРЅС„РѕСЂРјР°С†РёРё).                | РЅРѕ, РїРѕРєР° СЌС‚Рѕ РЅР° СЃС‚Р°РґРёРё С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ.    |\n");
+					Center ("| СЃС‡РµС‚ РєРѕРѕСЂРґРёРЅР°С‚ РїРѕРґ Р°Р±СЃРѕР»СЋС‚РЅРѕ Р»СЋР±РѕР№   | 3. Р”РѕР±Р°РІР»РµРЅР° РІРєР»Р°РґРєР° <РњР°РіР°Р·РёРЅ РёРіСЂС‹>, РЅРѕ РЅР° РґР°РЅРЅС‹Р№ | Р•СЃР»Рё РѕР±РЅР°СЂСѓР¶РёС‚Рµ Р±Р°РіРё РёР»Рё СЃРµСЂСЉС‘Р·РЅС‹Рµ РЅРµРґРѕ-|\n");
+					Center ("| СЌРєСЂР°РЅ).                              | РјРѕРјРµРЅС‚ СЃР°Рј РјР°РіР°Р·РёРЅ РµС‰Рµ РЅРµ РіРѕС‚РѕРІ (СѓР¶Рµ РІ СЃР»РµРґСѓСЋС‰РµР№  | С‡РµС‚С‹, РїРѕР¶Р°Р»СѓР№СЃС‚Р°, РЅР°РїРёС€РёС‚Рµ РёРЅС„РѕСЂРјР°С†РёСЋ РѕР±|\n");
+					Center ("| 3. Р Р°СЃС‚СЏРЅСѓС‚РѕРµ РѕРєРЅРѕ РЅР° РІРµСЃСЊ СЌРєСЂР°РЅ.    | РІРµСЂСЃРёРё РѕРЅ РїРѕСЏРІРёС‚СЃСЏ, СЃРµР№С‡Р°СЃ РѕР±РґСѓРјС‹РІР°РµС‚СЃСЏ Р°Р»РіРѕСЂРёС‚Рј  | СЌС‚РѕРј РІ С„РѕСЂРјР°С‚Рµ РѕС‚Р·С‹РІР° Р»РёС‡РЅС‹Рј СЃРѕРѕР±С‰РµРЅРёРµРј:|\n");
+					Center ("|                                      | РµРіРѕ СЂР°Р±РѕС‚С‹, РїРѕРјРёРјРѕ СЌС‚РѕРіРѕ, Р±СѓРґРµС‚ СЃРѕР·РґР°РЅР° РёРіСЂРѕРІР°СЏ   | vk.com/m1shaowned                       |\n");
+					Center ("|                                      | РІР°Р»СЋС‚Р°.                                           | 2. РР·РјРµРЅРµРЅ Р°Р»РіРѕСЂРёС‚Рј РІС‹РїР°РґРµРЅРёСЏ РєР°СЂС‚ (С€Р°РЅСЃ|\n");
+					Center ("|                                      |                                                   | РІС‹РїР°РґРµРЅРёСЏ РЅР° РґР°РЅРЅС‹Р№ РјРѕРјРµРЅС‚ СЃРѕСЃС‚Р°РІР»СЏРµС‚   |\n");
+					Center ("|                                      | *РЎРІРѕРµРІСЂРµРјРµРЅРЅС‹Р№ С„РёРєСЃ Р±Р°РіР° РїСЂРёРІРµР» Рє С‚РѕРјСѓ, С‡С‚Рѕ РїРѕС‚СЂРµ-| 10%, РґРѕ РѕР±РЅРѕРІР»РµРЅРёСЏ Р±С‹Р»Рѕ     11,11%).    |\n");
+					Center ("|                                      | Р±РѕРІР°Р»РѕСЃСЊ СЃРѕР·РґР°С‚СЊ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєСѓСЋ СѓСЃС‚Р°РЅРѕРІРєСѓ РёРіСЂС‹ РїСЂРё| 3. Р РµС„Р°РєС‚РѕСЂРёРЅРі РєРѕРґР° (РѕРїС‚РёРјРёР·Р°С†РёСЏ РёРіСЂС‹   |\n");
+					Center ("|                                      | РїРµСЂРІРѕРј Р·Р°РїСѓСЃРєРµ РїСЂРѕРіСЂР°РјРјС‹. РќРµ РёР·РјРµРЅСЏР№С‚Рµ РїСѓС‚СЊ РёРіСЂС‹! | РІ РєР°Р¶РґРѕР№ РЅРѕРІРѕР№ РІРµСЂСЃРёРё, РєРѕС‚РѕСЂР°СЏ С‡Р°СЃС‚РёС‡РЅРѕ |\n");
+					Center ("|                                      | (РќРµ Р°РєС‚СѓР°Р»СЊРЅРѕ РґР»СЏ РІРµСЂСЃРёРё 17.01)                   | РёР·РјРµРЅСЏРµС‚ РїСЂРѕС†РµСЃСЃ РіРµР№РјРїР»РµСЏ РІ С†РµР»РѕРј).     |\n");
 					Center ("|____________________________________________________________________________________________________________________________________|\n");
 					info ();
 				}
@@ -2960,32 +2960,32 @@ int main (void) {
 					break;
 				}
 			button ();
-		} // Конец перечня последних обновлений
+		} // РљРѕРЅРµС† РїРµСЂРµС‡РЅСЏ РїРѕСЃР»РµРґРЅРёС… РѕР±РЅРѕРІР»РµРЅРёР№
 
-		if (knopka == 56) // Начало игровой статистики
+		if (knopka == 56) // РќР°С‡Р°Р»Рѕ РёРіСЂРѕРІРѕР№ СЃС‚Р°С‚РёСЃС‚РёРєРё
 		{
 			cls;
 			statistic();
 			nenter(1);
-			Center ("Общий винрейт: ");
+			Center ("РћР±С‰РёР№ РІРёРЅСЂРµР№С‚: ");
 				if (Calibration <= 0)
 					cout << "0 %" << "\n";
 				else
 					cout << (WinsFirstBotLevel+WinsSecondBotLevel+WinsThirdBotLevel+WinsFourthBotLevel)/Calibration*100 << " %" << "\n";
 			Center ("---------------------------------------------\n");
-			Center ("Количество сыгранных игр: ");
+			Center ("РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‹РіСЂР°РЅРЅС‹С… РёРіСЂ: ");
 			cout << Calibration << "\n";
-			Center ("Количество ничьих: ");
+			Center ("РљРѕР»РёС‡РµСЃС‚РІРѕ РЅРёС‡СЊРёС…: ");
 			cout << Calibration-WinsFirstBotLevel-WinsSecondBotLevel-WinsThirdBotLevel-WinsFourthBotLevel-LossesFirstBotLevel-LossesSecondBotLevel-LossesThirdBotLevel-LossesFourthBotLevel << "\n";
-			Center ("Количество выпадений <Золотого очка>: ");
+			Center ("РљРѕР»РёС‡РµСЃС‚РІРѕ РІС‹РїР°РґРµРЅРёР№ <Р—РѕР»РѕС‚РѕРіРѕ РѕС‡РєР°>: ");
 			cout << GoldPoints << "\n";
 			Center ("---------------------------------------------\n");
-			Center ("Легкий уровень сложности:\n");
-			Center ("Побед: ");
+			Center ("Р›РµРіРєРёР№ СѓСЂРѕРІРµРЅСЊ СЃР»РѕР¶РЅРѕСЃС‚Рё:\n");
+			Center ("РџРѕР±РµРґ: ");
 			cout << WinsFirstBotLevel << "\n";
-			Center ("Поражений: ");
+			Center ("РџРѕСЂР°Р¶РµРЅРёР№: ");
 			cout << LossesFirstBotLevel  << "\n";
-			Center ("Средний винрейт: ");
+			Center ("РЎСЂРµРґРЅРёР№ РІРёРЅСЂРµР№С‚: ");
 				if (WinsFirstBotLevel == 0 || LossesFirstBotLevel == 0)
 					cout << "0 %" << "\n";
 				else
@@ -2996,12 +2996,12 @@ int main (void) {
 				else
 					cout <<"Blocked" << "\n";
 			Center ("---------------------------------------------\n");
-			Center ("Средний уровень сложности:\n");
-			Center ("Побед:  ");
+			Center ("РЎСЂРµРґРЅРёР№ СѓСЂРѕРІРµРЅСЊ СЃР»РѕР¶РЅРѕСЃС‚Рё:\n");
+			Center ("РџРѕР±РµРґ:  ");
 			cout << WinsSecondBotLevel << "\n";
-			Center ("Поражений: ");
+			Center ("РџРѕСЂР°Р¶РµРЅРёР№: ");
 			cout << LossesSecondBotLevel << "\n";
-			Center ("Средний винрейт: ");
+			Center ("РЎСЂРµРґРЅРёР№ РІРёРЅСЂРµР№С‚: ");
 				if (WinsSecondBotLevel == 0 || LossesSecondBotLevel == 0)
 					cout << "0 %" << "\n";
 				else
@@ -3012,12 +3012,12 @@ int main (void) {
 				else
 					cout <<"Blocked" << "\n";
 			Center ("---------------------------------------------\n");
-			Center (" Хардкорный уровень сложности:\n");
-			Center ("Побед:  ");
+			Center (" РҐР°СЂРґРєРѕСЂРЅС‹Р№ СѓСЂРѕРІРµРЅСЊ СЃР»РѕР¶РЅРѕСЃС‚Рё:\n");
+			Center ("РџРѕР±РµРґ:  ");
 			cout << WinsThirdBotLevel << "\n";
-			Center ("Поражений: ");
+			Center ("РџРѕСЂР°Р¶РµРЅРёР№: ");
 			cout << LossesThirdBotLevel << "\n";
-			Center ("Средний винрейт: ");
+			Center ("РЎСЂРµРґРЅРёР№ РІРёРЅСЂРµР№С‚: ");
 				if (WinsThirdBotLevel == 0 || LossesThirdBotLevel == 0)
 					cout << "0 %" << "\n";
 				else
@@ -3028,12 +3028,12 @@ int main (void) {
 				else
 					cout <<"Blocked" << "\n";
 			Center ("---------------------------------------------\n");
-			Center ("НЕПОБЕДИМЫЙ уровень сложности:\n");
-			Center ("Побед:  ");
+			Center ("РќР•РџРћР‘Р•Р”РРњР«Р™ СѓСЂРѕРІРµРЅСЊ СЃР»РѕР¶РЅРѕСЃС‚Рё:\n");
+			Center ("РџРѕР±РµРґ:  ");
 			cout << WinsFourthBotLevel << "\n";
-			Center ("Поражений: ");
+			Center ("РџРѕСЂР°Р¶РµРЅРёР№: ");
 			cout << LossesFourthBotLevel << "\n";
-			Center ("Средний винрейт: ");
+			Center ("РЎСЂРµРґРЅРёР№ РІРёРЅСЂРµР№С‚: ");
 				if (WinsFourthBotLevel == 0 || LossesFourthBotLevel == 0)
 					cout << "0 %" << "\n";
 				else
@@ -3044,7 +3044,7 @@ int main (void) {
 				else
 					cout <<"Blocked" << "\n";
 			nenter(1);
-			Center ("Для возврата в главное меню нажмите клавишу Esc");
+			Center ("Р”Р»СЏ РІРѕР·РІСЂР°С‚Р° РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РЅР°Р¶РјРёС‚Рµ РєР»Р°РІРёС€Сѓ Esc");
 				while (true)
 				{
 					knopka = getch ();
@@ -3052,23 +3052,23 @@ int main (void) {
 					break;
 				}
 			button ();
-		} // Конец игровой статистики
+		} // РљРѕРЅРµС† РёРіСЂРѕРІРѕР№ СЃС‚Р°С‚РёСЃС‚РёРєРё
 
-		if (knopka == 57) // Начало
+		if (knopka == 57) // РќР°С‡Р°Р»Рѕ
 		{
 			cls;
 			gameover ();
-			Center ("Кол-во сыгранных игр: ");
+			Center ("РљРѕР»-РІРѕ СЃС‹РіСЂР°РЅРЅС‹С… РёРіСЂ: ");
 			cout << Calibration << "\n";
-			Center ("Кол-во общих побед / поражений: ");
+			Center ("РљРѕР»-РІРѕ РѕР±С‰РёС… РїРѕР±РµРґ / РїРѕСЂР°Р¶РµРЅРёР№: ");
 			cout << WinsFirstBotLevel+WinsSecondBotLevel+WinsThirdBotLevel+WinsFourthBotLevel << " / " << LossesFirstBotLevel+LossesSecondBotLevel+LossesThirdBotLevel+LossesFourthBotLevel << "\n";
-			Center ("Кол-во заработанных / проигранных PTS в сумме: ");
+			Center ("РљРѕР»-РІРѕ Р·Р°СЂР°Р±РѕС‚Р°РЅРЅС‹С… / РїСЂРѕРёРіСЂР°РЅРЅС‹С… PTS РІ СЃСѓРјРјРµ: ");
 			cout << SumPts << " / " << DifferencePts << "\n";
-			Center ("Кол-во PTS на данный момент: ");
+			Center ("РљРѕР»-РІРѕ PTS РЅР° РґР°РЅРЅС‹Р№ РјРѕРјРµРЅС‚: ");
 			cout << pts << "\n";
 			Center ("---------------------------------------------------------------\n");
-			Center ("Для отправки лог-файла с Вашими результатами нажмите клавишу Enter\n");
-			Center ("Для возврата в главное меню нажмите клавишу Esc");
+			Center ("Р”Р»СЏ РѕС‚РїСЂР°РІРєРё Р»РѕРі-С„Р°Р№Р»Р° СЃ Р’Р°С€РёРјРё СЂРµР·СѓР»СЊС‚Р°С‚Р°РјРё РЅР°Р¶РјРёС‚Рµ РєР»Р°РІРёС€Сѓ Enter\n");
+			Center ("Р”Р»СЏ РІРѕР·РІСЂР°С‚Р° РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РЅР°Р¶РјРёС‚Рµ РєР»Р°РІРёС€Сѓ Esc");
 
 				if (CompletedLevel == 4)
 				{
@@ -3115,6 +3115,6 @@ int main (void) {
 					Ifstreamf ();
 				}
 			button ();
-		} // Конец
+		} // РљРѕРЅРµС†
 	}
 }
